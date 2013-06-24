@@ -50,9 +50,10 @@ var getPerson = function(id, callback) {
  */
 app.get('/sendmail', function(req, res) {
     var personId = req.query.id;
+    var sendTo = req.query.sendTo;
     getPerson(personId, function(person) {
         console.log(JSON.stringify(person));
-        mailer.sendMail(person);
+        mailer.sendMail(person, sendTo);
         res.send('Ok');
     });
 });

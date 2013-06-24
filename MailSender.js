@@ -7,8 +7,8 @@ MailSender = {
      *
      * @param toAddress
      */
-    sendMail: function (person) {
-        var toAddress = 'assaf.is.on.fire@gmail.com';
+    sendMail: function (person, sendTo) {
+        var toAddress = sendTo;
 //        var toAddress = 'assaf.is.on.fire@gmail.com';
         var transport = emailer.createTransport("SMTP", {
             host: "smtp.gmail.com", // hostname

@@ -285,7 +285,7 @@ Ext.onReady(function () {
                 items: [
                     {
                         xtype: 'button',
-                        text: 'שלח הזמנה (שולח בינתיים לכתובת שלך)',
+                        text: 'שלח הזמנה לבדיקה ל assaf.is.on.fire@gmail.com',
                         handler: function() {
                             var selections = grid.getSelectionModel().getSelection();
                             if (selections.length > 0) {
@@ -294,7 +294,26 @@ Ext.onReady(function () {
                                     method: 'GET',
                                     url: 'sendmail',
                                     params: {
-                                        id: selected._id
+                                        id: selected._id,
+                                        sendTo: 'assaf.is.on.fire@gmail.com'
+                                    }
+                                });
+                            }
+
+                        }
+                    },{
+                        xtype: 'button',
+                        text: 'שלח הזמנה לבדיקה ל danbaryak@gmail.com',
+                        handler: function() {
+                            var selections = grid.getSelectionModel().getSelection();
+                            if (selections.length > 0) {
+                                var selected = selections[0].data;
+                                Ext.Ajax.request({
+                                    method: 'GET',
+                                    url: 'sendmail',
+                                    params: {
+                                        id: selected._id,
+                                        sendTo: 'danbaryak@gmail.com'
                                     }
                                 });
                             }
