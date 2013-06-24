@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+
+<link rel="stylesheet" type="text/css" href="ext-4.2/resources/css/ext-all-neptune-rtl.css">
+<script type="text/javascript" src="ext-4.2/ext-all-rtl.js"></script>
+<script type="text/javascript" src="ext-4.2/ext-theme-neptune.js"></script>
+
+<!--<link rel="stylesheet" type="text/css" href="http://cdn.sencha.io/ext-4.2.0-gpl/resources/css/ext-all-neptune.css">-->
+
+<!--<script type="text/javascript" charset="utf-8" src="http://cdn.sencha.io/ext-4.2.0-gpl/ext-all.js"></script>-->
+<!--<script type="text/javascript" charset="utf-8" src="http://cdn.sencha.io/ext-4.2.0-gpl/ext-theme-neptune.js"></script>-->
+
+<script type="text/javascript" src="javascripts/Main.js"></script>
+<!--<link rel="stylesheet" type="text/css" href="style.css">-->
+
+<div id="main"></div>
+
+</html>
