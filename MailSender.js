@@ -28,7 +28,7 @@ MailSender = {
 //            html: "הי "  + person.name + "<br><img src='http://www.huptalentandbooking.com/images/elephants_dove.png'>" +
 //                "<br>אנחנו מתחתנים וזה<br><a href='http://mbp.local:3000/reply?id="
 //                + person._id + "&num=1'>אני מגיע לבד</a><br>"
-            html:  "<a href='http://localhost:3000/rsvp?id="+ person._id + "'>לחץ כאן להזמנה</a>"
+            html:  "<a href='http://54.225.118.154:8080/rsvp?id="+ person._id + "'>לחץ כאן להזמנה</a>"
         }
 
 // send mail with defined transport object
