@@ -117,16 +117,18 @@ app.delete('/people/:id', function(req, res) {
 app.get('/rsvp', function(req, res) {
     var personId = req.query.id;
     getPerson(personId, function(person) {
-        res.locals({
-            personId: person._id,
-            personName: person.name,
-            couple: person.couple,
-            coupleName: person.coupleName,
-            isFemale: person.isFemale
+        if (person) {
+            res.locals({
+                personId: person._id,
+                personName: person.name,
+                couple: person.couple,
+                coupleName: person.coupleName,
+                isFemale: person.isFemale
 
-        });
+            });
 
-        res.render('rsvp/rsvp');
+            res.render('rsvp/rsvp');
+        }
     });
 });
 

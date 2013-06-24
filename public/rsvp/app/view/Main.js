@@ -107,7 +107,7 @@ var decline = function() {
         }
     });
 }
-Ext.define('WedinviteApp.view.Main', {
+Ext.define('rsvp.view.Main', {
     extend: 'Ext.Panel',
     xtype: 'main',
 

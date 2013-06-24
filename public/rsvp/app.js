@@ -20,7 +20,7 @@ Ext.Loader.setPath({
 //</debug>
 
 Ext.application({
-    name: 'WedinviteApp',
+    name: 'rsvp',
 
     requires: [
         'Ext.MessageBox'
@@ -55,7 +55,7 @@ Ext.application({
         Ext.fly('appLoadingIndicator').destroy();
 
         // Initialize the main view
-        Ext.Viewport.add(Ext.create('WedinviteApp.view.Main'));
+        Ext.Viewport.add(Ext.create('rsvp.view.Main'));
     },
 
     onUpdated: function() {
