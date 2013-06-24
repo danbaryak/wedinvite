@@ -300,17 +300,8 @@ Ext.onReady(function () {
                             }
 
                         }
-                    },
-                    {
-                        xtype: 'button',
-                        text: 'בדיקה',
-                        handler: function() {
-                            var selection = grid.getView().getSelectionModel().getSelection()[0];
-                            if (selection) {
-                                form.loadRecord(selection);
-                            }
-                        }
                     }
+
                 ]
 
             },
