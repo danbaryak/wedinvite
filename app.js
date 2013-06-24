@@ -33,7 +33,7 @@ if ('development' == app.get('env')) {
     app.use(express.errorHandler());
 }
 
-app.get('/', function(req, res) {
+app.get('/assafdan1107', function(req, res) {
     res.render('index', { title : 'Express' });
 });
 
