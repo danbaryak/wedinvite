@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4ecfe818-08ec-4395-b64a-e9dbf2259602" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.js" afterPath="$PROJECT_DIR$/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MailSender.js" afterPath="$PROJECT_DIR$/MailSender.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="weddinvite.iws" />
@@ -28,7 +28,7 @@
     <file path="$PROJECT_DIR$/../Elastica/elastica-sandbox/src/main/webapp/WEB-INF/spring-context.xml" changelist="4ecfe818-08ec-4395-b64a-e9dbf2259602" time="1372069900183" ignored="false" />
     <file path="$PROJECT_DIR$/../Elastica/elastica-sandbox/src/main/webapp/WEB-INF/pages/index4.jsp" changelist="4ecfe818-08ec-4395-b64a-e9dbf2259602" time="1372069972348" ignored="false" />
     <file path="$PROJECT_DIR$/../Elastica/elastica-client-core/src/main/js/extjs/compatibility/Ext4PreConfig.js" changelist="4ecfe818-08ec-4395-b64a-e9dbf2259602" time="1372070004999" ignored="false" />
-    <file path="/Dummy.txt" changelist="4ecfe818-08ec-4395-b64a-e9dbf2259602" time="1372106412615" ignored="false" />
+    <file path="/Dummy.txt" changelist="4ecfe818-08ec-4395-b64a-e9dbf2259602" time="1372106496401" ignored="false" />
     <file path="/sencha.cfg" changelist="4ecfe818-08ec-4395-b64a-e9dbf2259602" time="1372087347813" ignored="false" />
     <file path="/packager.json" changelist="4ecfe818-08ec-4395-b64a-e9dbf2259602" time="1372087491194" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -89,10 +89,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="app.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="app.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="36" column="20" selection-start="1030" selection-end="1030" vertical-scroll-proportion="0.38032788">
+            <state line="29" column="5" selection-start="864" selection-end="864" vertical-scroll-proportion="6.76">
               <folding />
             </state>
           </provider>
@@ -134,10 +134,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MailSender.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="MailSender.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/MailSender.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="26" selection-start="466" selection-end="466" vertical-scroll-proportion="0.0">
+            <state line="11" column="22" selection-start="260" selection-end="260" vertical-scroll-proportion="0.5205047">
               <folding />
             </state>
           </provider>
@@ -210,7 +210,6 @@
         <option value="$PROJECT_DIR$/public/touch/microloader/development.js" />
         <option value="$PROJECT_DIR$/public/rsvp/rsvp.jshtml" />
         <option value="$PROJECT_DIR$/public/index.jshtml" />
-        <option value="$PROJECT_DIR$/MailSender.js" />
         <option value="$PROJECT_DIR$/public/rsvp/.sencha/app/codegen.json" />
         <option value="$PROJECT_DIR$/public/rsvp/.sencha/app/sencha.cfg" />
         <option value="$PROJECT_DIR$/public/build/rsvp/production/app.js" />
@@ -219,6 +218,7 @@
         <option value="$PROJECT_DIR$/public/rsvp/app/view/Main.js" />
         <option value="$PROJECT_DIR$/public/javascripts/Main.js" />
         <option value="$PROJECT_DIR$/app.js" />
+        <option value="$PROJECT_DIR$/MailSender.js" />
       </list>
     </option>
   </component>
@@ -582,7 +582,11 @@
       <created>1372106416246</created>
       <updated>1372106416246</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="changed address&#10;">
+      <created>1372106500852</created>
+      <updated>1372106500852</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -711,13 +715,6 @@
         <state line="6" column="23" selection-start="162" selection-end="162" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MailSender.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="26" selection-start="466" selection-end="466" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/rsvp/.sencha/app/sencha.cfg">
       <provider selected="true" editor-type-id="text-editor">
         <state line="6" column="17" selection-start="101" selection-end="101" vertical-scroll-proportion="0.0">
@@ -783,7 +780,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="20" selection-start="1030" selection-end="1030" vertical-scroll-proportion="0.38032788">
+        <state line="29" column="5" selection-start="864" selection-end="864" vertical-scroll-proportion="6.76">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MailSender.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="22" selection-start="260" selection-end="260" vertical-scroll-proportion="0.5205047">
           <folding />
         </state>
       </provider>
