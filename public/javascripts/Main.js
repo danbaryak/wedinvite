@@ -285,7 +285,7 @@ Ext.onReady(function () {
                 items: [
                     {
                         xtype: 'button',
-                        text: 'שלח הזמנה',
+                        text: 'שלח הזמנה (שולח בינתיים לכתובת שלך)',
                         handler: function() {
                             var selections = grid.getSelectionModel().getSelection();
                             if (selections.length > 0) {
