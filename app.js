@@ -17,7 +17,7 @@ var app = express();
 var mailer = require('./MailSender.js');
 
 // all environments                             ß
-app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.PORT || 8080);
 app.set('views', __dirname + '/public');
 app.engine('jshtml', require('jshtml-express'));  // make sure you have installed
 app.set('view engine', 'jshtml');
