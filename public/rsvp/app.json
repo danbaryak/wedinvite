@@ -40,7 +40,7 @@
      */
     "js": [
         {
-            "path": "../sencha-touch-2.2.1/sencha-touch.js",
+            "path": "../sencha-touch-2.2.1/sencha-touch-all.js",
             "x-bootstrap": true
         },
         {
