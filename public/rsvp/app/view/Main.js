@@ -122,8 +122,8 @@ var decline = function() {
 var notComingPanel = Ext.create('Ext.Panel', {
     layout: {
         type: 'vbox',
-        align: 'center',
-        pack: 'top'
+//        align: 'center',
+//        pack: 'top'
     },
     padding: '0',
     defaults: {

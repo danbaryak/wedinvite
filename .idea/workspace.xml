@@ -28,7 +28,7 @@
     <file path="$PROJECT_DIR$/../Elastica/elastica-sandbox/src/main/webapp/WEB-INF/spring-context.xml" changelist="4ecfe818-08ec-4395-b64a-e9dbf2259602" time="1372069900183" ignored="false" />
     <file path="$PROJECT_DIR$/../Elastica/elastica-sandbox/src/main/webapp/WEB-INF/pages/index4.jsp" changelist="4ecfe818-08ec-4395-b64a-e9dbf2259602" time="1372069972348" ignored="false" />
     <file path="$PROJECT_DIR$/../Elastica/elastica-client-core/src/main/js/extjs/compatibility/Ext4PreConfig.js" changelist="4ecfe818-08ec-4395-b64a-e9dbf2259602" time="1372070004999" ignored="false" />
-    <file path="/Dummy.txt" changelist="4ecfe818-08ec-4395-b64a-e9dbf2259602" time="1372200288188" ignored="false" />
+    <file path="/Dummy.txt" changelist="4ecfe818-08ec-4395-b64a-e9dbf2259602" time="1372200334717" ignored="false" />
     <file path="/sencha.cfg" changelist="4ecfe818-08ec-4395-b64a-e9dbf2259602" time="1372087347813" ignored="false" />
     <file path="/packager.json" changelist="4ecfe818-08ec-4395-b64a-e9dbf2259602" time="1372087491194" ignored="false" />
     <file path="/app.css" changelist="4ecfe818-08ec-4395-b64a-e9dbf2259602" time="1372194393845" ignored="false" />
@@ -102,7 +102,7 @@
       <file leaf-file-name="Main.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/rsvp/app/view/Main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="75" column="18" selection-start="1656" selection-end="1656" vertical-scroll-proportion="0.37804878">
+            <state line="126" column="20" selection-start="2641" selection-end="2641" vertical-scroll-proportion="0.37804878">
               <folding />
             </state>
           </provider>
@@ -723,7 +723,11 @@
       <created>1372200291774</created>
       <updated>1372200291774</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="replaced image">
+      <created>1372200337134</created>
+      <updated>1372200337134</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -953,7 +957,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/rsvp/app/view/Main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="75" column="18" selection-start="1656" selection-end="1656" vertical-scroll-proportion="0.37804878">
+        <state line="126" column="20" selection-start="2641" selection-end="2641" vertical-scroll-proportion="0.37804878">
           <folding />
         </state>
       </provider>
