@@ -8,7 +8,8 @@ var createItems = function() {
 //        height: '',
         width: '100%',
 
-        src: 'http://www.huptalentandbooking.com/images/elephants_dove.png',
+//        src: 'http://www.huptalentandbooking.com/images/elephants_dove.png',
+        src: 'resources/images/main.jpg',
         flex: 5
     }, {
         xtype: 'label',
