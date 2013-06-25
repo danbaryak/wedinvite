@@ -9,7 +9,7 @@ var createItems = function() {
         width: '100%',
 
 //        src: 'http://www.huptalentandbooking.com/images/elephants_dove.png',
-        src: 'resources/images/main.gif',
+        src: 'resources/images/main.jpg',
         flex: 10
     }, {
         cls: 'myfont',
