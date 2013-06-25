@@ -73,7 +73,7 @@ var createItems = function() {
 
     items.push({
         xtype: 'spacer',
-        height: 5
+        height: 10
     });
     return items;
 };
