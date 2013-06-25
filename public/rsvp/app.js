@@ -23,7 +23,7 @@ Ext.application({
     name: 'rsvp',
 
     requires: [
-        'Ext.MessageBox'
+        'Ext.MessageBox',
     ],
 
     views: [
@@ -54,8 +54,22 @@ Ext.application({
 
         Ext.fly('appLoadingIndicator').destroy();
 
-        // Initialize the main view
-        Ext.Viewport.add(Ext.create('rsvp.view.Main'));
+        mainPanel = Ext.create('rsvp.view.Main', { id: 'main-view' });
+//        // Initialize the main view
+        Ext.Viewport.setLayout('card');
+        Ext.Viewport.add(mainPanel);
+
+//        Ext.Viewport.add({
+//            masked: {
+//                xtype: 'loadmask',
+//                message: 'שולח תשובה',
+//                indicator: true
+//            }
+//        });
+//        Ext.Viewport.add({
+//            xtype: 'button',
+//            text: 'just a button'
+//        })
     },
 
     onUpdated: function() {

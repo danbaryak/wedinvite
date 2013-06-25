@@ -1,5 +1,7 @@
 
 
+var mainPanel = null;
+
 var createItems = function() {
     var items = [{
         xtype: 'image',
@@ -13,7 +15,7 @@ var createItems = function() {
         html: 'הי ' + personName
     }, {
         xtype: 'label',
-        html: 'אנחנו מתחתנים!!'
+        html: 'אנחנו מתחתנים'
     }];
 
     var arriving = 'אגיע'
@@ -21,18 +23,6 @@ var createItems = function() {
 //        arriving = 'מגיעה';
 //    }
     if (isPersonCouple) {
-        items.push({
-            flex: 1,
-            height: 40,
-            xtype: 'button',
-            ui: 'confirm',
-            minWidth: 250,
-            text: 'אני ' + arriving + ' לבד',
-            icon: 'http://icons.iconseeker.com/png/32/icontexto-emoticons/happy-3.png',
-            iconAlign: 'right',
-            scale: 'large',
-            handler: approve
-        });
 
         items.push({
             flex: 1,
@@ -43,6 +33,18 @@ var createItems = function() {
             text: 'אני ו' + coupleName + ' נגיע',
             handler: approveCouple
         });
+
+        items.push({
+            flex: 1,
+            height: 40,
+            xtype: 'button',
+            ui: 'confirm',
+            minWidth: 250,
+            text: 'אני ' + arriving + ' לבד',
+            scale: 'large',
+            handler: approve
+        });
+
     } else {
         items.push({
             flex: 1,
@@ -76,38 +78,80 @@ var createItems = function() {
 };
 
 var approve = function() {
+    sendReply(1);
+}
+
+var sendReply = function(count) {
+    Ext.Viewport.setMasked({
+        xtype: 'loadmask',
+        message: 'מעדכן'
+    });
+
     Ext.Ajax.request({
         url: '/reply',
         method: 'GET',
         params: {
             id: personId,
-            num: 1
+            num: count
+        },
+        success: function() {
+            Ext.Viewport.setMasked(false);
+            mainPanel.animateActiveItem(wedInfoPanel, {type: 'slide', direction: 'right'});
+
+        },
+        failure: function() {
+            Ext.Viewport.setMasked(false);
         }
     });
 }
 
 var approveCouple = function() {
-    Ext.Ajax.request({
-        url: '/reply',
-        method: 'GET',
-        params: {
-            id: personId,
-            num: 2
-        }
-    });
+   sendReply(2);
 }
 
 var decline = function() {
-    Ext.Ajax.request({
-        url: '/reply',
-        method: 'GET',
-        params: {
-            id: personId,
-            num: 0
-        }
-    });
+    sendReply(0);
 }
-Ext.define('rsvp.view.Main', {
+
+
+var wedInfoPanel = Ext.create('Ext.Panel', {
+    layout: {
+        type: 'vbox',
+        align: 'center',
+        pack: 'top'
+    },
+    padding: '10',
+
+    defaults: {
+        pack: 'center',
+        margin: 5
+    },
+    items: [
+        {
+            xtype: 'label',
+            html: 'מעולה! החתונה תתקיים בחוות אלנבי'
+        }
+
+    ]
+});
+
+var content = Ext.create('Ext.Panel', {
+    layout: {
+        type: 'vbox',
+        align: 'center',
+        pack: 'center'
+    },
+    padding: '10',
+
+    defaults: {
+        pack: 'center',
+        margin: 5
+    },
+
+    items: createItems()
+});
+
+ Ext.define('rsvp.view.Main', {
     extend: 'Ext.Panel',
     xtype: 'main',
 
@@ -123,20 +167,13 @@ Ext.define('rsvp.view.Main', {
 
     },
     config: {
-
         layout: {
-            type: 'vbox',
-            align: 'center',
-            pack: 'center'
+            type: 'card'
         },
-        padding: '10',
-
-        defaults: {
-            pack: 'center',
-            margin: 5
+        navigationBar:  {
+            ui: 'light'
         },
-
-        items: createItems()
+        items: content
     },
 
     loadCssFile :function( fileName ){
@@ -167,7 +204,7 @@ Ext.define('rsvp.view.Main', {
         //console.log("The language is: " + lang);
 
         if(lang === "rtl"){
-            this.loadJsFile("../ext-4.2/ext-all.js");
+//            this.loadJsFile("../ext-4.2/ext-all.js");
             this.loadJsFile("http://code.jquery.com/jquery-latest.js");
             this.loadCssFile("../touch/resources/css/sencha-touch-rtl.css");
 //            this.loadCssFile("resources/css/app-rtl.css");
