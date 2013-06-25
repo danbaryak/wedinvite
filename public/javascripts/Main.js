@@ -174,11 +174,11 @@ Ext.onReady(function () {
 
             },
             load: function(store, records) {
-                store.each(function(record) {
-                    if (record.get('sendFrom') == "") {
-                        record.set('sendFrom', 'Assaf');
-                    }
-                });
+//                store.each(function(record) {
+//                    if (record.get('sendFrom') == "") {
+//                        record.set('sendFrom', 'Assaf');
+//                    }
+//                });
             }, add: function(store, records) {
                 Ext.each(records, function(rec) {
                     rec.set('sendFrom', 'Assaf');
