@@ -96,7 +96,11 @@ var sendReply = function(count) {
         },
         success: function() {
             Ext.Viewport.setMasked(false);
-            mainPanel.animateActiveItem(wedInfoPanel, {type: 'slide', direction: 'right'});
+            if (count > 0) {
+                mainPanel.animateActiveItem(wedInfoPanel, {type: 'fade'});
+            } else {
+                mainPanel.animateActiveItem(notComingPanel, {type: 'fade'});
+            }
 
         },
         failure: function() {
@@ -114,6 +118,26 @@ var decline = function() {
 }
 
 
+var notComingPanel = Ext.create('Ext.Panel', {
+    layout: {
+        type: 'vbox',
+        align: 'center',
+        pack: 'top'
+    },
+    padding: '10',
+    defaults: {
+        pack: 'center',
+        margin: 5
+    },
+
+    items: [
+        {
+            xtype: 'label',
+            html: 'חבלללל'
+        }
+    ]
+});
+
 var wedInfoPanel = Ext.create('Ext.Panel', {
     layout: {
         type: 'vbox',
@@ -129,7 +153,7 @@ var wedInfoPanel = Ext.create('Ext.Panel', {
     items: [
         {
             xtype: 'label',
-            html: 'מעולה! החתונה תתקיים בחוות אלנבי'
+            html: '<a href="http://www.halenby.co.il">מעולה! החתונה תתקיים בחוות אלנבי</a>'
         }
 
     ]
