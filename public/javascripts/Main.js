@@ -1,5 +1,29 @@
 
+
 Ext.onReady(function () {
+
+    var fromAddress = Ext.create('Ext.data.Store', {
+        fields: ['value'],
+        data: [
+            { value: 'Dan' },
+            { value: 'Assaf' }
+        ],
+        proxy: {
+            type: 'memory',
+            reader: {
+                type: 'json',
+                root: 'items'
+            }
+        }
+    });
+
+    var combo = new Ext.form.ComboBox({
+        store: fromAddress,
+        valueField: "value",
+        displayField: "value",
+        valueNotFoundText: "Assaf" ,
+        editable: false
+    });
 
     Ext.define('Person', {
         extend: 'Ext.data.Model',
@@ -19,7 +43,7 @@ Ext.onReady(function () {
             }, 'coupleName', {
                 name: 'arriving',
                 type: 'int'
-            }]
+            }, 'sendFrom']
     });
 
     var personDetails = Ext.create('Ext.form.Panel', {
@@ -110,7 +134,13 @@ Ext.onReady(function () {
             }
         ]
     });
-
+    var comboBoxRenderer = function(combo) {
+        return function(value) {
+            var idx = combo.store.find(combo.valueField, value);
+            var rec = combo.store.getAt(idx);
+            return (rec === null ? '' : rec.get(combo.displayField) );
+        };
+    }
     var store = Ext.create('Ext.data.Store', {
         autoLoad: true,
         autoSync: true,
@@ -142,6 +172,17 @@ Ext.onReady(function () {
 //                }
 //                Ext.example.msg(name, Ext.String.format("{0} user: {1}", verb, record.getId()));
 
+            },
+            load: function(store, records) {
+                store.each(function(record) {
+                    if (record.get('sendFrom') == "") {
+                        record.set('sendFrom', 'Assaf');
+                    }
+                });
+            }, add: function(store, records) {
+                Ext.each(records, function(rec) {
+                    rec.set('sendFrom', 'Assaf');
+                })
             }
         }
     });
@@ -200,6 +241,14 @@ Ext.onReady(function () {
             editor: {
                 allowBlank: true
             }
+        },{
+            header: 'שלח מ',
+            width: 80,
+            sortable: true,
+            dataIndex: 'sendFrom',
+            editable: true,
+            editor: combo
+
         },{
             header: 'הזמנה זוגית',
             width: 80,
