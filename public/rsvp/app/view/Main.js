@@ -125,10 +125,10 @@ var notComingPanel = Ext.create('Ext.Panel', {
         align: 'center',
         pack: 'top'
     },
-    padding: '5',
+    padding: '0',
     defaults: {
         pack: 'center',
-        margin: 2
+        margin: 0
     },
 
     items: [
@@ -166,11 +166,11 @@ var content = Ext.create('Ext.Panel', {
         align: 'center',
         pack: 'center'
     },
-    padding: '10',
+    padding: '5',
 
     defaults: {
         pack: 'center',
-        margin: 5
+        margin: 2
     },
 
     items: createItems()
