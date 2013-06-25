@@ -122,7 +122,7 @@ var decline = function() {
 var notComingPanel = Ext.create('Ext.Panel', {
     layout: {
         type: 'vbox',
-//        align: 'center',
+        align: 'center',
 //        pack: 'top'
     },
     padding: '0',
@@ -164,7 +164,7 @@ var content = Ext.create('Ext.Panel', {
     layout: {
         type: 'vbox',
         align: 'center',
-        pack: 'center'
+        pack: 'top'
     },
     padding: '5',
 
