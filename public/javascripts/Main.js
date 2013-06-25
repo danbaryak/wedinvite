@@ -212,7 +212,7 @@ Ext.onReady(function () {
         frame: true,
         title: 'רשימת מוזמנים',
         store: store,
-
+        invalidateScrollerOnRefresh: false,
 //        iconCls: 'icon-user',
         columns: [{
             header: 'שם פרטי',

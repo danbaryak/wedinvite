@@ -28,7 +28,7 @@
     <file path="$PROJECT_DIR$/../Elastica/elastica-sandbox/src/main/webapp/WEB-INF/spring-context.xml" changelist="4ecfe818-08ec-4395-b64a-e9dbf2259602" time="1372069900183" ignored="false" />
     <file path="$PROJECT_DIR$/../Elastica/elastica-sandbox/src/main/webapp/WEB-INF/pages/index4.jsp" changelist="4ecfe818-08ec-4395-b64a-e9dbf2259602" time="1372069972348" ignored="false" />
     <file path="$PROJECT_DIR$/../Elastica/elastica-client-core/src/main/js/extjs/compatibility/Ext4PreConfig.js" changelist="4ecfe818-08ec-4395-b64a-e9dbf2259602" time="1372070004999" ignored="false" />
-    <file path="/Dummy.txt" changelist="4ecfe818-08ec-4395-b64a-e9dbf2259602" time="1372142470078" ignored="false" />
+    <file path="/Dummy.txt" changelist="4ecfe818-08ec-4395-b64a-e9dbf2259602" time="1372143092041" ignored="false" />
     <file path="/sencha.cfg" changelist="4ecfe818-08ec-4395-b64a-e9dbf2259602" time="1372087347813" ignored="false" />
     <file path="/packager.json" changelist="4ecfe818-08ec-4395-b64a-e9dbf2259602" time="1372087491194" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -110,11 +110,8 @@
       <file leaf-file-name="Main.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/javascripts/Main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="178" column="26" selection-start="4821" selection-end="4821" vertical-scroll-proportion="0.22256097">
-              <folding>
-                <marker date="1372143084000" expanded="true" signature="4735:4897" placeholder="{...}" />
-                <marker date="1372143084000" expanded="true" signature="4793:4877" placeholder="{...}" />
-              </folding>
+            <state line="210" column="30" selection-start="5745" selection-end="5745" vertical-scroll-proportion="0.28658536">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -603,7 +600,11 @@
       <created>1372142472651</created>
       <updated>1372142472651</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="added 'sendFrom' column">
+      <created>1372143096633</created>
+      <updated>1372143096633</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -816,11 +817,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/javascripts/Main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="178" column="26" selection-start="4821" selection-end="4821" vertical-scroll-proportion="0.22256097">
-          <folding>
-            <marker date="1372143084000" expanded="true" signature="4735:4897" placeholder="{...}" />
-            <marker date="1372143084000" expanded="true" signature="4793:4877" placeholder="{...}" />
-          </folding>
+        <state line="210" column="30" selection-start="5745" selection-end="5745" vertical-scroll-proportion="0.28658536">
+          <folding />
         </state>
       </provider>
     </entry>
