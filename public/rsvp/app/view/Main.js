@@ -9,12 +9,14 @@ var createItems = function() {
         width: '100%',
 
 //        src: 'http://www.huptalentandbooking.com/images/elephants_dove.png',
-        src: 'resources/images/main.jpg',
-        flex: 5
+        src: 'resources/images/main.gif',
+        flex: 10
     }, {
+        cls: 'myfont',
         xtype: 'label',
         html: 'הי ' + personName
     }, {
+        cls: 'myfont',
         xtype: 'label',
         html: 'אנחנו מתחתנים'
     }];
@@ -29,7 +31,6 @@ var createItems = function() {
             flex: 1,
             height: 35,
             xtype: 'button',
-            ui: 'confirm',
             minWidth: 250,
             text: 'אני ו' + coupleName + ' נגיע',
             handler: approveCouple
@@ -39,7 +40,6 @@ var createItems = function() {
             flex: 1,
             height: 40,
             xtype: 'button',
-            ui: 'confirm',
             minWidth: 250,
             text: 'אני ' + arriving + ' לבד',
             scale: 'large',
