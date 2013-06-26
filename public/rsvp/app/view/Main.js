@@ -198,7 +198,7 @@ var createContent = function() {
         flex: 1
     }, {
         xtype: 'panel',
-        height: 20
+        height: 60
 //        flex: 0,
 //        height: '20%'
     }];
