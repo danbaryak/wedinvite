@@ -31,8 +31,8 @@ var createItems = function() {
             height: btnHeight,
             xtype: 'button',
             minWidth: 250,
-            maxWidth: 360,
-            ui: 'confirm',
+//            maxWidth: 360,
+            cls: 'modus-button green',
             text: 'אני ו' + coupleName + ' נגיע',
             handler: approveCouple
         });
@@ -42,9 +42,10 @@ var createItems = function() {
             height: btnHeight,
             xtype: 'button',
             minWidth: 250,
+            cls   : 'modus-button yellow',
             text: 'אני ' + arriving + ' לבד',
             scale: 'large',
-            ui: 'confirm',
+
             handler: approve
         });
 
@@ -53,7 +54,7 @@ var createItems = function() {
             flex: 1,
             height: btnHeight,
             xtype: 'button',
-            ui: 'confirm',
+            cls   : 'modus-button green',
             minWidth: 250,
             maxHeight: 40,
 
@@ -69,7 +70,7 @@ var createItems = function() {
         xtype: 'button',
         height: btnHeight,
         minWidth: 250,
-        ui: 'decline',
+        cls:'modus-button grey',
         maxHeight: 40,
         text: 'אני לא ' + arriving,
         handler: decline

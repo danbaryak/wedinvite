@@ -1,0 +1,30 @@
+@mixin modus-button($color, $fgcolor) {
+  @include transition(all .25s ease);
+  @include border-radius(6px);
+  margin-bottom: 15px;
+  font-size: 15px;
+  background: $color;
+
+  border: none;
+  color: $fgcolor;
+  text-decoration: none;
+  .x-button-label {
+    padding: 10px 0;
+  }
+  &.x-button-pressing {
+    background: darken($color, 10);
+  }
+}
+
+
+.green {
+  @include modus-button(#6bda9c, #474747);
+}
+
+.yellow {
+  @include modus-button(#e4d24e, #474747);
+}
+
+.grey {
+  @include modus-button(#dcdcdc, #474747);
+}
