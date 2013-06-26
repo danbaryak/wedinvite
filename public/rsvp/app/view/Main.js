@@ -207,7 +207,7 @@ var wedInfoPanel = Ext.create('Ext.Panel', {
 });
 
 var createContent = function() {
-    return [
+    var items = [
         {
             baseCls: 'myfont',
             cls: 'atitle',
@@ -235,12 +235,18 @@ var createContent = function() {
             },
             items: createItems(),
             flex: 4
-        }, {
+        }];
+
+    if (Ext.browser.name === 'Other') {
+        items.push( {
             xtype: 'panel',
             height: 60
 //        flex: 0,
 //        height: '20%'
-        }];
+        });
+    }
+
+    return items;
 }
 
 var content = Ext.create('Ext.Panel', {
@@ -260,6 +266,11 @@ var content = Ext.create('Ext.Panel', {
     },
 
     items: createContent()
+});
+
+var cardPanel = Ext.create('Ext.Panel', {
+    layout: 'card',
+    items: content
 });
 
 Ext.define('rsvp.view.Main', {
