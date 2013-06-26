@@ -138,19 +138,30 @@ var notComingPanel = Ext.create('Ext.Panel', {
 
     items: [
         {
+            xtype: 'label',
+            cls: 'atitle',
+            html: '..חבל'
+        },
+        {
             xtype: 'image',
 //        height: '',
             width: '100%',
-            height: '70%',
+//            height: '70%',
 //        src: 'http://www.huptalentandbooking.com/images/elephants_dove.png',
             src: 'resources/images/Sad.png',
-            flex: 1
+            flex: 5
         }, {
             xtype: 'panel',
             layout: {
-                type: 'border'
+                type: 'vbox'
             },
-            height: '30%'
+            flex: 4
+//            height: '30%'
+        },{
+            xtype: 'panel',
+            height: 60
+//        flex: 0,
+//        height: '20%'
         }
     ]
 });
@@ -170,13 +181,27 @@ var wedInfoPanel = Ext.create('Ext.Panel', {
     },
     items: [
         {
+            xtype: 'label',
+            cls: 'atitle',
+            html: '!איזה כיף'
+        },{
             xtype: 'image',
 //        height: '',
             width: '100%',
-            height: '70%',
+//            height: '70%',
 //        src: 'http://www.huptalentandbooking.com/images/elephants_dove.png',
             src: 'resources/images/Happy.png',
-            flex: 1
+            flex: 5
+        }, {
+            xtype: 'panel',
+            layout: 'vbox',
+            flex: 4
+        },
+        {
+            xtype: 'panel',
+            height: 60
+//        flex: 0,
+//        height: '20%'
         }
     ]
 });
