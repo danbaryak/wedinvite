@@ -8,7 +8,7 @@ var createItems = function() {
         xtype: 'label',
         html: 'הי ' + personName
     }, {
-        baseCls: 'myfont',
+        baseCls: 'customf',
         xtype: 'label',
         html: 'אנחנו מתחתנים'
     }];
@@ -72,13 +72,7 @@ var createItems = function() {
 //        }]
 
     });
-    if (Ext.browser.name === 'Other') {
-        items.push({
-            xtype: 'spacer',
 
-            height: 120
-        });
-    }
     return items;
 };
 
@@ -129,6 +123,7 @@ var notComingPanel = Ext.create('Ext.Panel', {
         align: 'center'
 //        pack: 'top'
     },
+    baseCls: 'customb',
     padding: '0',
     defaults: {
         pack: 'center',
@@ -155,6 +150,7 @@ var notComingPanel = Ext.create('Ext.Panel', {
 });
 
 var wedInfoPanel = Ext.create('Ext.Panel', {
+    baseCls: 'customb',
     layout: {
         type: 'vbox',
         align: 'center'
@@ -202,6 +198,8 @@ var createContent = function() {
 }
 
 var content = Ext.create('Ext.Panel', {
+
+    baseCls: 'customb',
     fullscreen: true,
     layout: {
         type: 'vbox',
@@ -235,12 +233,11 @@ var content = Ext.create('Ext.Panel', {
     },
     config: {
 
+
         layout: {
             type: 'card'
         },
-        navigationBar:  {
-            ui: 'light'
-        },
+
         items: content
     },
 
@@ -276,8 +273,11 @@ var content = Ext.create('Ext.Panel', {
             this.loadJsFile("http://code.jquery.com/jquery-latest.js");
             this.loadCssFile("../touch/resources/css/sencha-touch-rtl.css");
 //            this.loadCssFile("resources/css/app-rtl.css");
+            this.loadCssFile("resources/css/app.css");
+            this.loadCssFile("resources/css/custom.css");
         }else{
             this.loadCssFile("resources/css/app.css");
+            this.loadCssFile("resources/css/custom.css");
         }
     }
 });
