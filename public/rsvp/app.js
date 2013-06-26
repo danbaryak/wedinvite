@@ -13,6 +13,64 @@
 // DO NOT DELETE - this directive is required for Sencha Cmd packages to work.
 //@require @packageOverrides
 
+Ext.define('Ext.env.ChromeiOS', {
+    override: 'Ext.env.Browser',
+    statics: {
+        browserNames: {
+            ie: 'IE',
+            firefox: 'Firefox',
+            safari: 'Safari',
+            chrome: 'Chrome',
+            opera: 'Opera',
+            dolfin: 'Dolfin',
+            webosbrowser: 'webOSBrowser',
+            chromeMobile: 'ChromeMobile',
+            chromeiOS: 'ChromeiOS',
+            silk: 'Silk',
+            other: 'Other'
+        },
+        engineNames: {
+            webkit: 'WebKit',
+            gecko: 'Gecko',
+            presto: 'Presto',
+            trident: 'Trident',
+            other: 'Other'
+        },
+        enginePrefixes: {
+            webkit: 'AppleWebKit/',
+            gecko: 'Gecko/',
+            presto: 'Presto/',
+            trident: 'Trident/'
+        },
+        browserPrefixes: {
+            ie: 'MSIE ',
+            firefox: 'Firefox/',
+            chrome: 'Chrome/',
+            safari: 'Version/',
+            opera: 'OPR/',
+            dolfin: 'Dolfin/',
+            webosbrowser: 'wOSBrowser/',
+            chromeMobile: 'CrMo/',
+            chromeiOS: 'CriOS/',
+            silk: 'Silk/'
+        }
+    }
+});
+
+Ext.define('Ext.viewport.ChromeiOS', {
+    onReady: function() {
+        if (this.getAutoRender()) {
+            this.render();
+        }
+        if (Ext.browser.name == 'ChromeiOS') {
+            this.element.setStyle({
+        });
+                this.setHeight('-webkit-calc(100% - ' + ((window.outerHeight - window.innerHeight) / 2) + 'px)');
+//
+    }
+}
+});
+
 //<debug>
 Ext.Loader.setPath({
     'Ext': '../touch/src'

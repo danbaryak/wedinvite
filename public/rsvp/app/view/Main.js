@@ -10,13 +10,13 @@ var createItems = function() {
 
 //        src: 'http://www.huptalentandbooking.com/images/elephants_dove.png',
         src: 'resources/images/main.jpg',
-        flex: 10
+        flex: 4
     }, {
-        cls: 'myfont',
+        baseCls: 'myfont',
         xtype: 'label',
         html: 'הי ' + personName
     }, {
-        cls: 'myfont',
+        baseCls: 'myfont',
         xtype: 'label',
         html: 'אנחנו מתחתנים'
     }];
@@ -25,6 +25,12 @@ var createItems = function() {
 //    if (isFemale) {
 //        arriving = 'מגיעה';
 //    }
+//    items.push({
+//        xtype: 'label',
+//        html: Ext.broswer.name,
+//
+//        height: 120
+//    });
     if (isPersonCouple) {
 
         items.push({
@@ -32,13 +38,14 @@ var createItems = function() {
             height: 35,
             xtype: 'button',
             minWidth: 250,
+            maxHeight: 40,
             text: 'אני ו' + coupleName + ' נגיע',
             handler: approveCouple
         });
 
         items.push({
             flex: 1,
-            height: 40,
+            maxHeight: 40,
             xtype: 'button',
             minWidth: 250,
             text: 'אני ' + arriving + ' לבד',
@@ -53,6 +60,7 @@ var createItems = function() {
             xtype: 'button',
             ui: 'confirm',
             minWidth: 250,
+            maxHeight: 40,
             text: 'אני ' + arriving,
             handler: approve
         })
@@ -65,16 +73,19 @@ var createItems = function() {
             xtype: 'button',
             height: 35,
             minWidth: 250,
+        maxHeight: 40,
             text: 'אני לא ' + arriving,
             handler: decline
 //        }]
 
     });
+    if (Ext.browser.name === 'Other') {
+        items.push({
+            xtype: 'spacer',
 
-    items.push({
-        xtype: 'spacer',
-        height: 10
-    });
+            height: 120
+        });
+    }
     return items;
 };
 
@@ -122,7 +133,7 @@ var decline = function() {
 var notComingPanel = Ext.create('Ext.Panel', {
     layout: {
         type: 'vbox',
-        align: 'center',
+        align: 'center'
 //        pack: 'top'
     },
     padding: '0',
@@ -142,8 +153,8 @@ var notComingPanel = Ext.create('Ext.Panel', {
 var wedInfoPanel = Ext.create('Ext.Panel', {
     layout: {
         type: 'vbox',
-        align: 'center',
-        pack: 'top'
+        align: 'center'
+//        pack: 'top'
     },
     padding: '10',
 
@@ -161,15 +172,16 @@ var wedInfoPanel = Ext.create('Ext.Panel', {
 });
 
 var content = Ext.create('Ext.Panel', {
+    fullscreen: true,
     layout: {
         type: 'vbox',
-        align: 'center',
-        pack: 'top'
+        align: 'center'
+//        pack: 'top'
     },
     padding: '5',
 
     defaults: {
-        pack: 'center',
+//        pack: 'center',
         margin: 2
     },
 
@@ -192,6 +204,7 @@ var content = Ext.create('Ext.Panel', {
 
     },
     config: {
+
         layout: {
             type: 'card'
         },
