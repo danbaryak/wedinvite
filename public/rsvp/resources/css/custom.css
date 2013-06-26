@@ -6,3 +6,15 @@
     font-family: Serif;
 }
 img { max-width: 100%; }
+
+
+@font-face
+{
+    font-family: 'Leah';
+    src: url(../fonts/Leah.TTF);
+}
+.customfont {
+    font-family:  Ariel;
+    color:#000;
+    /*font-size:25px;*/
+}

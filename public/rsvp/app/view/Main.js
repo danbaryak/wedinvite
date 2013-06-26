@@ -4,14 +4,11 @@ var mainPanel = null;
 var btnHeight = 45;
 var btnMaxHeight = 45;
 var createItems = function() {
-    var items = [{
-        baseCls: 'myfont',
+    var items = [ {
+//        baseCls: 'myfont',
+        cls: 'grn',
         xtype: 'label',
-        html: 'הי ' + personName
-    }, {
-        baseCls: 'customf',
-        xtype: 'label',
-        html: 'אנחנו מתחתנים'
+        html: ':אנא בחר את התשובה הנכונה'
     }];
 
     var arriving = 'אגיע'
@@ -187,6 +184,12 @@ var wedInfoPanel = Ext.create('Ext.Panel', {
 var createContent = function() {
     return [
         {
+            baseCls: 'myfont',
+            cls: 'atitle',
+            xtype: 'label',
+            html: 'הי ' + personName
+        },
+        {
             xtype: 'image',
             width: '100%',
 //            height: '10%',
@@ -200,7 +203,7 @@ var createContent = function() {
             layout: {
                 type: 'vbox',
 
-                align: 'right'
+                align: 'center'
             },
             defaults: {
                 margin: 2
