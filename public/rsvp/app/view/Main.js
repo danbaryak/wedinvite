@@ -187,7 +187,7 @@ var createContent = function() {
 
     }, {
         xtype: 'panel',
-        height: '30%',
+        height: '40%',
         layout: {
             type: 'vbox',
             align: 'right'
