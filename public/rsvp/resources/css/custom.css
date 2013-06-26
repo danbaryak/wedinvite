@@ -18,3 +18,7 @@ img { max-width: 100%; }
     color:#000;
     /*font-size:25px;*/
 }
+
+.x-button, .x-tab, .x-list-parent div {
+    cursor: pointer;
+}

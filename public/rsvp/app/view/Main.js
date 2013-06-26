@@ -3,13 +3,28 @@
 var mainPanel = null;
 var btnHeight = 45;
 var btnMaxHeight = 45;
+
+var addChromeFix = function(items) {
+    if (Ext.browser.name === 'Other') {
+        items.push( {
+            xtype: 'panel',
+            height: 60
+//        flex: 0,
+//        height: '20%'
+        });
+    }
+}
+
 var createItems = function() {
     var items = [ {
 //        baseCls: 'myfont',
-        cls: 'grn',
+        cls: 'atitle',
         xtype: 'label',
-        html: ':אנא בחר את התשובה הנכונה'
+//        html: 'דן - אסף - 11.07.13 - חוות |נבי'
+        html:     'דן | אסף | 11.07.13 | חוות אלנבי'
+
     }];
+
 
     var arriving = 'אגיע'
 //    if (isFemale) {
@@ -31,7 +46,7 @@ var createItems = function() {
             minWidth: 250,
 //            maxWidth: 360,
             cls: 'modus-button green',
-            text: 'אני ו' + coupleName + ' נגיע',
+            text: '!' + 'אני ו' + coupleName + ' נגיע',
             handler: approveCouple
         });
 
@@ -42,7 +57,7 @@ var createItems = function() {
             xtype: 'button',
             minWidth: 250,
             cls   : 'modus-button yellow',
-            text: 'אני ' + arriving + ' לבד',
+            text: '!' + 'אני ' + arriving,
             scale: 'large',
 
             handler: approve
@@ -73,7 +88,7 @@ var createItems = function() {
         minWidth: 250,
         cls:'modus-button grey',
         maxHeight: 40,
-        text: 'אני לא ' + arriving,
+        text: 'כפתור סירוב מנומס',
         handler: decline
 //        }]
 
@@ -122,25 +137,12 @@ var decline = function() {
     sendReply(0);
 }
 
-
-var notComingPanel = Ext.create('Ext.Panel', {
-    layout: {
-        type: 'vbox',
-        align: 'center'
-//        pack: 'top'
-    },
-    baseCls: 'customb',
-    padding: '0',
-    defaults: {
-//        pack: 'center',
-        margin: 0
-    },
-
-    items: [
+var createNotComingItems = function() {
+    var items = [
         {
             xtype: 'label',
             cls: 'atitle',
-            html: '..חבל'
+            html: 'חבלוש :('
         },
         {
             xtype: 'image',
@@ -157,15 +159,85 @@ var notComingPanel = Ext.create('Ext.Panel', {
             },
             flex: 4
 //            height: '30%'
+        }
+    ];
+
+    addChromeFix(items);
+    return items;
+
+}
+
+var notComingPanel = Ext.create('Ext.Panel', {
+    layout: {
+        type: 'vbox',
+        align: 'center'
+//        pack: 'top'
+    },
+    baseCls: 'customb',
+    padding: '0',
+    defaults: {
+//        pack: 'center',
+        margin: 0
+    },
+
+    items: createNotComingItems()
+});
+
+var createWedInfoItems = function() {
+    var items = [
+        {
+            xtype: 'label',
+            cls: 'atitle',
+            html: '!!אדיר'
         },{
+        xtype: 'image',
+//        height: '',
+        width: '100%',
+//            height: '70%',
+//        src: 'http://www.huptalentandbooking.com/images/elephants_dove.png',
+        src: 'resources/images/Happy.png',
+        flex: 5
+    }, {
+        xtype: 'panel',
+        layout: {
+            type: 'vbox',
+            align: 'center'
+        },
+        flex: 4,
+        items: [
+            {
+                xtype: 'label',
+                cls: 'atitle',
+                html: 'הארוע יתקיים בחוות אלנבי'
+            },{
+                xtype: 'label',
+                cls: 'atitle',
+                html: 'ביום חמישי ה 11.07.2013'
+            }, {
+                xtype: 'label',
+                cls: 'atitle',
+                html: 'בשעה 20:00'
+            }, {
+                xtype: 'button',
+                cls: 'modus-button green',
+                text: 'לאתר חוות אלנבי',
+                minWidth: 250,
+                height: btnHeight
+            }
+
+        ]
+
+    },
+        {
             xtype: 'panel',
             height: 60
 //        flex: 0,
 //        height: '20%'
         }
-    ]
-});
-
+    ];
+    addChromeFix(items);
+    return items;
+}
 var wedInfoPanel = Ext.create('Ext.Panel', {
     baseCls: 'customb',
     layout: {
@@ -179,31 +251,7 @@ var wedInfoPanel = Ext.create('Ext.Panel', {
         pack: 'center'
 //        margin: 5
     },
-    items: [
-        {
-            xtype: 'label',
-            cls: 'atitle',
-            html: '!איזה כיף'
-        },{
-            xtype: 'image',
-//        height: '',
-            width: '100%',
-//            height: '70%',
-//        src: 'http://www.huptalentandbooking.com/images/elephants_dove.png',
-            src: 'resources/images/Happy.png',
-            flex: 5
-        }, {
-            xtype: 'panel',
-            layout: 'vbox',
-            flex: 4
-        },
-        {
-            xtype: 'panel',
-            height: 60
-//        flex: 0,
-//        height: '20%'
-        }
-    ]
+    items: createWedInfoItems()
 });
 
 var createContent = function() {
@@ -212,7 +260,7 @@ var createContent = function() {
             baseCls: 'myfont',
             cls: 'atitle',
             xtype: 'label',
-            html: 'הי ' + personName
+            html:  '!!' +'היי ' + personName
         },
         {
             xtype: 'image',
@@ -237,17 +285,12 @@ var createContent = function() {
             flex: 4
         }];
 
-    if (Ext.browser.name === 'Other') {
-        items.push( {
-            xtype: 'panel',
-            height: 60
-//        flex: 0,
-//        height: '20%'
-        });
-    }
+    addChromeFix(items);
+
 
     return items;
 }
+
 
 var content = Ext.create('Ext.Panel', {
 
