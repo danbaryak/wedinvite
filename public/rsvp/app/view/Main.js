@@ -32,7 +32,7 @@ var createItems = function() {
             xtype: 'button',
             minWidth: 250,
             maxWidth: 360,
-
+            ui: 'confirm',
             text: 'אני ו' + coupleName + ' נגיע',
             handler: approveCouple
         });
@@ -44,7 +44,7 @@ var createItems = function() {
             minWidth: 250,
             text: 'אני ' + arriving + ' לבד',
             scale: 'large',
-
+            ui: 'confirm',
             handler: approve
         });
 
@@ -56,6 +56,7 @@ var createItems = function() {
             ui: 'confirm',
             minWidth: 250,
             maxHeight: 40,
+
             text: 'אני ' + arriving,
             handler: approve
         })
@@ -68,6 +69,7 @@ var createItems = function() {
         xtype: 'button',
         height: btnHeight,
         minWidth: 250,
+        ui: 'decline',
         maxHeight: 40,
         text: 'אני לא ' + arriving,
         handler: decline
@@ -137,7 +139,7 @@ var notComingPanel = Ext.create('Ext.Panel', {
             xtype: 'image',
 //        height: '',
             width: '100%',
-//            height: '60%',
+            height: '70%',
 //        src: 'http://www.huptalentandbooking.com/images/elephants_dove.png',
             src: 'resources/images/Sad.png',
             flex: 1
@@ -182,9 +184,9 @@ var createContent = function() {
         {
             xtype: 'image',
             width: '100%',
-            height: '100%',
+//            height: '10%',
 //            html    : '<img src="resources/images/Normal.png" />',
-            src: 'resources/images/Normal_2.png',
+            src: 'resources/images/Normal.png',
             flex: 2
 
         }, {
@@ -192,7 +194,11 @@ var createContent = function() {
 //            height: '40%',
             layout: {
                 type: 'vbox',
+
                 align: 'right'
+            },
+            defaults: {
+                margin: 2
             },
             items: createItems(),
             flex: 1
