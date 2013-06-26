@@ -4,14 +4,6 @@ var mainPanel = null;
 
 var createItems = function() {
     var items = [{
-        xtype: 'image',
-//        height: '',
-        width: '100%',
-        height: '70%',
-//        src: 'http://www.huptalentandbooking.com/images/elephants_dove.png',
-        src: 'resources/images/Normal.png'
-
-    }, {
         baseCls: 'myfont',
         xtype: 'label',
         html: 'הי ' + personName
@@ -38,6 +30,7 @@ var createItems = function() {
             height: 35,
             xtype: 'button',
             minWidth: 250,
+            maxWidth: 360,
             maxHeight: 40,
             text: 'אני ו' + coupleName + ' נגיע',
             handler: approveCouple
@@ -146,10 +139,10 @@ var notComingPanel = Ext.create('Ext.Panel', {
         {
             xtype: 'image',
 //        height: '',
-            width: '100%',
-            height: '70%',
+//            width: '100%',
+            height: '60%',
 //        src: 'http://www.huptalentandbooking.com/images/elephants_dove.png',
-            src: 'resources/images/Sad.png',
+            src: 'resources/images/Sad.png'
 
         }
     ]
@@ -164,14 +157,14 @@ var wedInfoPanel = Ext.create('Ext.Panel', {
 //    padding: '10',
 
     defaults: {
-        pack: 'center',
+        pack: 'center'
 //        margin: 5
     },
     items: [
         {
             xtype: 'image',
 //        height: '',
-            width: '100%',
+//            width: '100%',
             height: '70%',
 //        src: 'http://www.huptalentandbooking.com/images/elephants_dove.png',
             src: 'resources/images/Happy.png'
@@ -179,6 +172,27 @@ var wedInfoPanel = Ext.create('Ext.Panel', {
         }
     ]
 });
+
+var createContent = function() {
+    return [{
+        xtype: 'image',
+//        height: '',
+            width: '100%',
+        height: '69%',
+//        src: 'http://www.huptalentandbooking.com/images/elephants_dove.png',
+        src: 'resources/images/Normal.png'
+
+    }, {
+        xtype: 'panel',
+        height: '30%',
+        layout: {
+            type: 'vbox',
+            align: 'right'
+        },
+        items: createItems()
+
+    }];
+}
 
 var content = Ext.create('Ext.Panel', {
     fullscreen: true,
@@ -194,7 +208,7 @@ var content = Ext.create('Ext.Panel', {
 //        margin: 2
     },
 
-    items: createItems()
+    items: createContent()
 });
 
  Ext.define('rsvp.view.Main', {
