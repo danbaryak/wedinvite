@@ -183,7 +183,7 @@ var createContent = function() {
 //        height: '69%',
 //        src: 'http://www.huptalentandbooking.com/images/elephants_dove.png',
         src: 'resources/images/Normal.png',
-        flex: 1
+        flex: 2
 
     }, {
         xtype: 'panel',
@@ -192,8 +192,8 @@ var createContent = function() {
             type: 'vbox',
             align: 'right'
         },
-        items: createItems()
-
+        items: createItems(),
+        flex: 1
     }];
 }
 

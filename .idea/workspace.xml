@@ -9,7 +9,7 @@
     <ignored path=".idea/workspace.xml" />
     <file path="/app.js" changelist="4ecfe818-08ec-4395-b64a-e9dbf2259602" time="1372174968366" ignored="false" />
     <file path="/index.jshtml" changelist="4ecfe818-08ec-4395-b64a-e9dbf2259602" time="1372246216400" ignored="false" />
-    <file path="/Main.js" changelist="4ecfe818-08ec-4395-b64a-e9dbf2259602" time="1372251336313" ignored="false" />
+    <file path="/Main.js" changelist="4ecfe818-08ec-4395-b64a-e9dbf2259602" time="1372251967303" ignored="false" />
     <file path="/fragment.js" changelist="4ecfe818-08ec-4395-b64a-e9dbf2259602" time="1371918496089" ignored="false" />
     <file path="/MailSender.js" changelist="4ecfe818-08ec-4395-b64a-e9dbf2259602" time="1372065206648" ignored="false" />
     <file path="/rsvp.jshtml" changelist="4ecfe818-08ec-4395-b64a-e9dbf2259602" time="1372032730078" ignored="false" />
@@ -28,7 +28,7 @@
     <file path="$PROJECT_DIR$/../Elastica/elastica-sandbox/src/main/webapp/WEB-INF/spring-context.xml" changelist="4ecfe818-08ec-4395-b64a-e9dbf2259602" time="1372069900183" ignored="false" />
     <file path="$PROJECT_DIR$/../Elastica/elastica-sandbox/src/main/webapp/WEB-INF/pages/index4.jsp" changelist="4ecfe818-08ec-4395-b64a-e9dbf2259602" time="1372069972348" ignored="false" />
     <file path="$PROJECT_DIR$/../Elastica/elastica-client-core/src/main/js/extjs/compatibility/Ext4PreConfig.js" changelist="4ecfe818-08ec-4395-b64a-e9dbf2259602" time="1372070004999" ignored="false" />
-    <file path="/Dummy.txt" changelist="4ecfe818-08ec-4395-b64a-e9dbf2259602" time="1372251837023" ignored="false" />
+    <file path="/Dummy.txt" changelist="4ecfe818-08ec-4395-b64a-e9dbf2259602" time="1372251919482" ignored="false" />
     <file path="/sencha.cfg" changelist="4ecfe818-08ec-4395-b64a-e9dbf2259602" time="1372087347813" ignored="false" />
     <file path="/packager.json" changelist="4ecfe818-08ec-4395-b64a-e9dbf2259602" time="1372087491194" ignored="false" />
     <file path="$PROJECT_DIR$/../dumpster/.idea/workspace.xml" changelist="4ecfe818-08ec-4395-b64a-e9dbf2259602" time="1372177234204" ignored="false" />
@@ -127,7 +127,7 @@
       <file leaf-file-name="Main.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/rsvp/app/view/Main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="188" column="20" selection-start="3973" selection-end="3973" vertical-scroll-proportion="0.40040243">
+            <state line="194" column="29" selection-start="4111" selection-end="4111" vertical-scroll-proportion="0.6056338">
               <folding />
             </state>
           </provider>
@@ -684,7 +684,11 @@
       <created>1372251842234</created>
       <updated>1372251842234</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Changed elephants&#10;">
+      <created>1372251924044</created>
+      <updated>1372251924044</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -889,7 +893,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/rsvp/app/view/Main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="188" column="20" selection-start="3973" selection-end="3973" vertical-scroll-proportion="0.40040243">
+        <state line="194" column="29" selection-start="4111" selection-end="4111" vertical-scroll-proportion="0.6056338">
           <folding />
         </state>
       </provider>
