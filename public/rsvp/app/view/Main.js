@@ -2,7 +2,7 @@
 
 var mainPanel = null;
 var btnHeight = 45;
-
+var btnMaxHeight = 45;
 var createItems = function() {
     var items = [{
         baseCls: 'myfont',
@@ -29,6 +29,7 @@ var createItems = function() {
         items.push({
             flex: 1,
             height: btnHeight,
+            maxHeight: btnMaxHeight,
             xtype: 'button',
             minWidth: 250,
 //            maxWidth: 360,
@@ -40,6 +41,7 @@ var createItems = function() {
         items.push({
             flex: 1,
             height: btnHeight,
+            maxHeight: btnMaxHeight,
             xtype: 'button',
             minWidth: 250,
             cls   : 'modus-button yellow',
@@ -53,6 +55,7 @@ var createItems = function() {
         items.push({
             flex: 1,
             height: btnHeight,
+            maxHeight: btnMaxHeight,
             xtype: 'button',
             cls   : 'modus-button green',
             minWidth: 250,
@@ -69,6 +72,7 @@ var createItems = function() {
         flex: 1,
         xtype: 'button',
         height: btnHeight,
+        maxHeight: btnMaxHeight,
         minWidth: 250,
         cls:'modus-button grey',
         maxHeight: 40,
@@ -188,7 +192,7 @@ var createContent = function() {
 //            height: '10%',
 //            html    : '<img src="resources/images/Normal.png" />',
             src: 'resources/images/Normal.png',
-            flex: 3
+            flex: 5
 
         }, {
             xtype: 'panel',
@@ -202,7 +206,7 @@ var createContent = function() {
                 margin: 2
             },
             items: createItems(),
-            flex: 2
+            flex: 4
         }, {
             xtype: 'panel',
             height: 60
