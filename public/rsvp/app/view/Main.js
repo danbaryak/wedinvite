@@ -187,7 +187,7 @@ var createContent = function() {
 //            height: '10%',
 //            html    : '<img src="resources/images/Normal.png" />',
             src: 'resources/images/Normal.png',
-            flex: 2
+            flex: 3
 
         }, {
             xtype: 'panel',
@@ -201,7 +201,7 @@ var createContent = function() {
                 margin: 2
             },
             items: createItems(),
-            flex: 1
+            flex: 2
         }, {
             xtype: 'panel',
             height: 60
