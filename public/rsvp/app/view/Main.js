@@ -7,10 +7,10 @@ var createItems = function() {
         xtype: 'image',
 //        height: '',
         width: '100%',
-
+        height: '70%',
 //        src: 'http://www.huptalentandbooking.com/images/elephants_dove.png',
-        src: 'resources/images/main.jpg',
-        flex: 4
+        src: 'resources/images/Normal.png'
+
     }, {
         baseCls: 'myfont',
         xtype: 'label',
@@ -144,8 +144,13 @@ var notComingPanel = Ext.create('Ext.Panel', {
 
     items: [
         {
-            xtype: 'label',
-            html: 'חבלללל'
+            xtype: 'image',
+//        height: '',
+            width: '100%',
+            height: '70%',
+//        src: 'http://www.huptalentandbooking.com/images/elephants_dove.png',
+            src: 'resources/images/Sad.png',
+
         }
     ]
 });
@@ -156,18 +161,22 @@ var wedInfoPanel = Ext.create('Ext.Panel', {
         align: 'center'
 //        pack: 'top'
     },
-    padding: '10',
+//    padding: '10',
 
     defaults: {
         pack: 'center',
-        margin: 5
+//        margin: 5
     },
     items: [
         {
-            xtype: 'label',
-            html: '<a href="http://www.halenby.co.il">מעולה! החתונה תתקיים בחוות אלנבי</a>'
-        }
+            xtype: 'image',
+//        height: '',
+            width: '100%',
+            height: '70%',
+//        src: 'http://www.huptalentandbooking.com/images/elephants_dove.png',
+            src: 'resources/images/Happy.png'
 
+        }
     ]
 });
 
@@ -178,11 +187,11 @@ var content = Ext.create('Ext.Panel', {
         align: 'center'
 //        pack: 'top'
     },
-    padding: '5',
+//    padding: '5',
 
     defaults: {
 //        pack: 'center',
-        margin: 2
+//        margin: 2
     },
 
     items: createItems()
