@@ -138,7 +138,7 @@ app.get('/reply', function(req, res) {
     var personId = req.query.id;
     var num = req.query.num;
     console.log('number of arrivals for ' + personId + ' is ' + num);
-    people.update({_id: new ObjectID(personId)}, { $set: { arriving: num }}, function(err, doc) {
+    people.update({_id: new ObjectID(personId)}, { $set: { arriving: num, replied: true }}, function(err, doc) {
         if (err) {
             res.send('Error');
         } else {

@@ -43,7 +43,13 @@ Ext.onReady(function () {
             }, 'coupleName', {
                 name: 'arriving',
                 type: 'int'
-            }, 'sendFrom']
+            }, 'sendFrom', {
+                name: 'invitationsSent',
+                type: 'int'
+            }, {
+                name: 'toCount',
+                type: 'int'
+            }]
     });
 
     var personDetails = Ext.create('Ext.form.Panel', {
@@ -187,6 +193,10 @@ Ext.onReady(function () {
         }
     });
 
+    var selModel = Ext.create('Ext.selection.CheckboxModel', {
+
+    });
+
     var rowEditing = Ext.create('Ext.grid.plugin.RowEditing', {
         listeners: {
             cancelEdit: function(rowEditing, context) {
@@ -212,6 +222,8 @@ Ext.onReady(function () {
         frame: true,
         title: 'רשימת מוזמנים',
         store: store,
+        columnLines: true,
+        selModel: selModel,
         invalidateScrollerOnRefresh: false,
 //        iconCls: 'icon-user',
         columns: [{
@@ -264,6 +276,19 @@ Ext.onReady(function () {
                 xtype: 'textfield'
             }
         }, {
+            header: 'התעלם',
+            width: 50,
+            dataIndex: 'toCount',
+            field: {
+                xtype: 'textfield'
+            },
+            editable: true
+        }, {
+            header: 'נשלחו',
+            width: 50,
+            dataIndex: 'invitationsSent',
+            editable: false
+        }, {
             header: 'מגיעים',
             width: 50,
             dataIndex: 'arriving',
@@ -289,6 +314,65 @@ Ext.onReady(function () {
                         store.remove(selection);
                     }
                 }
+            },{
+                xtype: 'button',
+                text: 'שלח הזמנה לבדיקה ל assaf.is.on.fire@gmail.com',
+                handler: function() {
+                    var selections = grid.getSelectionModel().getSelection();
+                    if (selections.length > 0) {
+                        var selected = selections[0].data;
+                        Ext.Ajax.request({
+                            method: 'GET',
+                            url: 'sendmail',
+                            params: {
+                                id: selected._id,
+                                sendTo: 'assaf.is.on.fire@gmail.com'
+                            }
+                        });
+                    }
+
+                }
+            },{
+                xtype: 'button',
+                text: 'שלח הזמנה לבדיקה ל danbaryak@gmail.com',
+                handler: function() {
+                    var selections = grid.getSelectionModel().getSelection();
+                    if (selections.length > 0) {
+                        var selected = selections[0].data;
+                        Ext.Ajax.request({
+                            method: 'GET',
+                            url: 'sendmail',
+                            params: {
+                                id: selected._id,
+                                sendTo: 'danbaryak@gmail.com'
+                            }
+                        });
+                    }
+
+                }
+            }, '-',{
+                xtype: 'button',
+                text: 'שלח הזמנות',
+                cls: 'btnRed',
+                handler: function() {
+                    Ext.MessageBox.confirm('שליחת הזמנות', 'לשלוח הזמנות? בטוח??', function(btn){
+                        if(btn === 'yes'){
+                            Ext.each(grid.getSelectionModel().getSelection(), function(record) {
+                                record.set('invitationsSent', record.get('invitationsSent') + 1);
+//                                record.save();
+                                Ext.Ajax.request({
+                                    method: 'GET',
+                                    url: 'sendmail',
+                                    params: {
+                                        id: record.data._id,
+                                        sendTo: record.data.email
+                                    }
+                                });
+                            });
+                        }
+                    });
+
+                }
             }]
         }]
 
@@ -297,7 +381,7 @@ Ext.onReady(function () {
     var onSelectionChange = function(model, records) {
         var prev = personDetails.getRecord();
         if (prev) {
-//            personDetails.updateRecord(prev);
+            personDetails.updateRecord(prev);
 //            prev.save({
 //                success: function(user) {
 //
@@ -326,49 +410,14 @@ Ext.onReady(function () {
             {
                 xtype: 'panel',
                 layout: {
-                    type: 'hbox',
+                    type: 'vbox',
                     defaultMargins: '10 10 10 10'
                 },
-                region: 'north',
+                region: 'east',
 
                 items: [
-                    {
-                        xtype: 'button',
-                        text: 'שלח הזמנה לבדיקה ל assaf.is.on.fire@gmail.com',
-                        handler: function() {
-                            var selections = grid.getSelectionModel().getSelection();
-                            if (selections.length > 0) {
-                                var selected = selections[0].data;
-                                Ext.Ajax.request({
-                                    method: 'GET',
-                                    url: 'sendmail',
-                                    params: {
-                                        id: selected._id,
-                                        sendTo: 'assaf.is.on.fire@gmail.com'
-                                    }
-                                });
-                            }
 
-                        }
-                    },{
-                        xtype: 'button',
-                        text: 'שלח הזמנה לבדיקה ל danbaryak@gmail.com',
-                        handler: function() {
-                            var selections = grid.getSelectionModel().getSelection();
-                            if (selections.length > 0) {
-                                var selected = selections[0].data;
-                                Ext.Ajax.request({
-                                    method: 'GET',
-                                    url: 'sendmail',
-                                    params: {
-                                        id: selected._id,
-                                        sendTo: 'danbaryak@gmail.com'
-                                    }
-                                });
-                            }
 
-                        }
-                    }
 
                 ]
 

@@ -73,7 +73,7 @@ var createItems = function() {
             minWidth: 250,
             maxHeight: 40,
 
-            text: 'אני ' + arriving,
+            text: '!' + 'אני ' + arriving,
             handler: approve
         })
     }
