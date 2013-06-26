@@ -1,6 +1,7 @@
 
 
 var mainPanel = null;
+var btnHeight = 45;
 
 var createItems = function() {
     var items = [{
@@ -27,29 +28,30 @@ var createItems = function() {
 
         items.push({
             flex: 1,
-            height: 35,
+            height: btnHeight,
             xtype: 'button',
             minWidth: 250,
             maxWidth: 360,
-            maxHeight: 40,
+
             text: 'אני ו' + coupleName + ' נגיע',
             handler: approveCouple
         });
 
         items.push({
             flex: 1,
-            maxHeight: 40,
+            height: btnHeight,
             xtype: 'button',
             minWidth: 250,
             text: 'אני ' + arriving + ' לבד',
             scale: 'large',
+
             handler: approve
         });
 
     } else {
         items.push({
             flex: 1,
-            height: 35,
+            height: btnHeight,
             xtype: 'button',
             ui: 'confirm',
             minWidth: 250,
@@ -64,7 +66,7 @@ var createItems = function() {
 //        children: [{
             flex: 1,
             xtype: 'button',
-            height: 35,
+            height: btnHeight,
             minWidth: 250,
         maxHeight: 40,
             text: 'אני לא ' + arriving,
@@ -194,6 +196,11 @@ var createContent = function() {
         },
         items: createItems(),
         flex: 1
+    }, {
+        xtype: 'panel',
+        height: 20
+//        flex: 0,
+//        height: '20%'
     }];
 }
 
