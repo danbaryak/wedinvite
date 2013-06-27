@@ -14,6 +14,7 @@ var ObjectID = require('mongodb').ObjectID;
 var mongojs = require('mongojs');
 var db = mongojs('wedinvite');
 var people = db.collection('people');
+var replies = db.collection('replies');
 var app = express();
 var mailer = require('./MailSender.js');
 
@@ -146,6 +147,11 @@ app.get('/reply', function(req, res) {
         }
     });
 
+    replies.save({
+        time: new Date().getTime(),
+        personId: personId,
+        arriving: num
+    })
 })
 
 app.get('/stats', function(req, res) {
