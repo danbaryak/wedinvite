@@ -198,6 +198,9 @@ var createWedInfoItems = function() {
         src: 'resources/images/Happy.png',
         flex: 5
     }, {
+        defaults: {
+            margin: 2
+        },
         xtype: 'panel',
         layout: {
             type: 'vbox',
@@ -217,6 +220,10 @@ var createWedInfoItems = function() {
                 xtype: 'label',
                 cls: 'atitle',
                 html: 'בשעה 20:00'
+            }, {
+                xtype: 'label',
+                cls: 'atitle',
+                html: ':) נתראה שם'
             }, {
                 xtype: 'button',
                 cls: 'modus-button green',
