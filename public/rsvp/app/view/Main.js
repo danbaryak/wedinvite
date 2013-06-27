@@ -222,7 +222,10 @@ var createWedInfoItems = function() {
                 cls: 'modus-button green',
                 text: 'לאתר חוות אלנבי',
                 minWidth: 250,
-                height: btnHeight
+                height: btnHeight,
+                handler: function() {
+                    window.open('http://www.halenby.co.il');
+                }
             }
 
         ]
