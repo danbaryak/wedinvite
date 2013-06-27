@@ -49,6 +49,9 @@ Ext.onReady(function () {
             }, {
                 name: 'toCount',
                 type: 'int'
+            }, {
+                name: 'replied',
+                type: 'boolean'
             }]
     });
 
@@ -80,6 +83,18 @@ Ext.onReady(function () {
 //            }
 
         ]
+    });
+
+    MyCheckColumn = Ext.extend(Ext.grid.column.CheckColumn,{
+        //The reference to the related dataIndex
+        relatedIndex : null,
+        listeners: {
+        //Override onMouseDown method
+            beforecheckchange: function( column, rowIndex, checked, eOpts ) {
+                var person = store.getAt(rowIndex).data;
+                return person.invitationsSent == 0;
+            }
+        }
     });
 
     var form = Ext.create('Ext.form.Panel', {
@@ -209,11 +224,21 @@ Ext.onReady(function () {
     });
 
     cellEditing = new Ext.grid.plugin.CellEditing({
-        clicksToEdit: 2
+        clicksToEdit: 2,
+        listeners: {
+            beforeEdit: function(object, options){
+                if (object.context.record.data.invitationsSent > 0) {
+                    return false;
+                }
+                return true;
+            }
+        }
+
     });
 
     var grid = Ext.create('Ext.grid.Panel', {
         region: 'center',
+
         rtl: true,
         plugins: [cellEditing],
         width: 400,
@@ -270,13 +295,19 @@ Ext.onReady(function () {
             editable: true,
             editor: combo
 
-        },{
+        },new MyCheckColumn({
             header: 'הזמנה זוגית',
             width: 80,
             sortable: true,
             dataIndex: 'couple',
-            xtype: 'checkcolumn'
-        },{
+            xtype: 'disablecheckcolumn',
+            editor: {
+                xtype: 'checkbox',
+                cls: 'x-grid-checkheader-editor'
+            }
+        }),
+
+       {
             header: 'שם הזוג',
             width: 100,
             sortable: true,
@@ -318,10 +349,20 @@ Ext.onReady(function () {
 
                 disabled: true,
                 handler: function(){
-                    var selection = grid.getView().getSelectionModel().getSelection()[0];
-                    if (selection) {
-                        store.remove(selection);
-                    }
+
+                    Ext.MessageBox.confirm('מחיקה', 'בטוח??????!??', function(btn){
+                        if(btn === 'yes') {
+                            var selection = grid.getView().getSelectionModel().getSelection()[0];
+                            if (selection) {
+                                if (selection.get('invitationsSent') > 0) {
+                                    Ext.MessageBox.alert('מחיקה חסומה', 'לא ניתן למחוק מוזמן שנשלחה אליו הזמנה. מחק נתוני הגעה קודם');
+                                    return;
+                                }
+                                store.remove(selection);
+                            }
+                        }
+                    });
+
                 }
             },{
                 xtype: 'button',
@@ -357,6 +398,21 @@ Ext.onReady(function () {
                             }
                         });
                     }
+
+                }
+            }, {
+                xtype: 'button',
+                text: 'אפס נתוני הגעה',
+                handler: function() {
+                    Ext.MessageBox.confirm('איפוס', 'אם המוזמן עדכן הגעה הנתונים ימחקו. בטוח?', function(btn) {
+                        if(btn === 'yes'){
+                            Ext.each(grid.getSelectionModel().getSelection(), function(record) {
+                                record.set('invitationsSent', 0);
+                                record.set('arriving', 0);
+                                record.set('replied', false);
+                            });
+                        }
+                    });
 
                 }
             }, '-',{
@@ -431,7 +487,7 @@ Ext.onReady(function () {
                 ]
 
             },
-            grid, personDetails
+            grid
         ]
     });
 

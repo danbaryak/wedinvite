@@ -45,7 +45,7 @@ MailSender = {
 //            html: "הי "  + person.name + "<br><img src='http://www.huptalentandbooking.com/images/elephants_dove.png'>" +
 //                "<br>אנחנו מתחתנים וזה<br><a href='http://mbp.local:3000/reply?id="
 //                + person._id + "&num=1'>אני מגיע לבד</a><br>"
-            html:  "<body style='text-align:right; direction:rtl;'><b><a href='http://54.225.118.154:8080/rsvp?id="+ person._id + "'ג<>לחצו כאן כדי לצפות בהזמנה (כן, אפשר גם מהסמארטפון)</a></body>"
+            html:  "<body style='text-align:right; direction:rtl;'><b><a href='http://54.225.118.154:8080/rsvp?id="+ person._id + "'ג<>לחצו כאן כדי לצפות בהזמנה (אפשר גם מהסמארטפון)</a></body>"
 
         }
 
