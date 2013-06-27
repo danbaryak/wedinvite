@@ -186,9 +186,9 @@ Ext.onReady(function () {
 //                    }
 //                });
             }, add: function(store, records) {
-                Ext.each(records, function(rec) {
-                    rec.set('sendFrom', 'Assaf');
-                })
+//                Ext.each(records, function(rec) {
+//                    rec.set('sendFrom', 'Assaf');
+//                })
             }
         }
     });
