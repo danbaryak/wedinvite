@@ -148,6 +148,27 @@ app.get('/reply', function(req, res) {
 
 })
 
+app.get('/stats', function(req, res) {
+    map = function() {
+        var invited = this.couple ? 2 : 1;
+        if (this.toCount) {
+            invited -= this.toCount;
+        }
+        emit('invited', {sum: invited});
+    }
+    reduce = function(key, values) {
+        var reduced = { sum: 0 };
+        values.forEach(function(value) { reduced.sum += value.sum; });
+        return reduced;
+    }
+    people.mapReduce(map, reduce, {out: {inline: 1}}, function(err, results, stats) {
+        if (err) {
+            throw err;
+        }
+        res.send(results);
+    });
+});
+
 http.createServer(app).listen(app.get('port'), function(){
     console.log('Express server listening on port ' + app.get('port'));
 });

@@ -225,6 +225,15 @@ Ext.onReady(function () {
         columnLines: true,
         selModel: selModel,
         invalidateScrollerOnRefresh: false,
+//        header: {
+//           items: [
+//                {
+//                    xtype: 'label',
+//                    html: 'מוזמנים'
+//                }
+//
+//            ]
+//        },
 //        iconCls: 'icon-user',
         columns: [{
             header: 'שם פרטי',

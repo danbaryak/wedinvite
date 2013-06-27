@@ -3,13 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="4ecfe818-08ec-4395-b64a-e9dbf2259602" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/Main.js" afterPath="$PROJECT_DIR$/public/javascripts/Main.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.js" afterPath="$PROJECT_DIR$/app.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="weddinvite.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/app.js" changelist="4ecfe818-08ec-4395-b64a-e9dbf2259602" time="1372174968366" ignored="false" />
+    <file path="/app.js" changelist="4ecfe818-08ec-4395-b64a-e9dbf2259602" time="1372328226533" ignored="false" />
     <file path="/index.jshtml" changelist="4ecfe818-08ec-4395-b64a-e9dbf2259602" time="1372246216400" ignored="false" />
-    <file path="/Main.js" changelist="4ecfe818-08ec-4395-b64a-e9dbf2259602" time="1372262755562" ignored="false" />
+    <file path="/Main.js" changelist="4ecfe818-08ec-4395-b64a-e9dbf2259602" time="1372328898362" ignored="false" />
     <file path="/fragment.js" changelist="4ecfe818-08ec-4395-b64a-e9dbf2259602" time="1371918496089" ignored="false" />
     <file path="/MailSender.js" changelist="4ecfe818-08ec-4395-b64a-e9dbf2259602" time="1372065206648" ignored="false" />
     <file path="/rsvp.jshtml" changelist="4ecfe818-08ec-4395-b64a-e9dbf2259602" time="1372032730078" ignored="false" />
@@ -28,7 +29,7 @@
     <file path="$PROJECT_DIR$/../Elastica/elastica-sandbox/src/main/webapp/WEB-INF/spring-context.xml" changelist="4ecfe818-08ec-4395-b64a-e9dbf2259602" time="1372069900183" ignored="false" />
     <file path="$PROJECT_DIR$/../Elastica/elastica-sandbox/src/main/webapp/WEB-INF/pages/index4.jsp" changelist="4ecfe818-08ec-4395-b64a-e9dbf2259602" time="1372069972348" ignored="false" />
     <file path="$PROJECT_DIR$/../Elastica/elastica-client-core/src/main/js/extjs/compatibility/Ext4PreConfig.js" changelist="4ecfe818-08ec-4395-b64a-e9dbf2259602" time="1372070004999" ignored="false" />
-    <file path="/Dummy.txt" changelist="4ecfe818-08ec-4395-b64a-e9dbf2259602" time="1372262832473" ignored="false" />
+    <file path="/Dummy.txt" changelist="4ecfe818-08ec-4395-b64a-e9dbf2259602" time="1372320533884" ignored="false" />
     <file path="/sencha.cfg" changelist="4ecfe818-08ec-4395-b64a-e9dbf2259602" time="1372087347813" ignored="false" />
     <file path="/packager.json" changelist="4ecfe818-08ec-4395-b64a-e9dbf2259602" time="1372087491194" ignored="false" />
     <file path="$PROJECT_DIR$/../dumpster/.idea/workspace.xml" changelist="4ecfe818-08ec-4395-b64a-e9dbf2259602" time="1372177234204" ignored="false" />
@@ -40,10 +41,11 @@
     <file path="$PROJECT_DIR$/../Elastica/elastica-client-core/src/main/js/extjs/model/TreeStoreAdapter.js" changelist="4ecfe818-08ec-4395-b64a-e9dbf2259602" time="1372254513466" ignored="false" />
     <file path="/TreeStoreAdapter.js" changelist="4ecfe818-08ec-4395-b64a-e9dbf2259602" time="1372254465399" ignored="false" />
     <file path="$PROJECT_DIR$/../Elastica/elastica-sandbox/src/main/resources/com/imperva/elastica/sandbox/component/treeSample/TreeSampleLayout.xml" changelist="4ecfe818-08ec-4395-b64a-e9dbf2259602" time="1372254895086" ignored="false" />
-    <file path="$PROJECT_DIR$/../Elastica/elastica-client-core/src/main/js/widgets/layout/BorderLayout.js" changelist="4ecfe818-08ec-4395-b64a-e9dbf2259602" time="1372255219958" ignored="false" />
+    <file path="$PROJECT_DIR$/../Elastica/elastica-client-core/src/main/js/widgets/layout/BorderLayout.js" changelist="4ecfe818-08ec-4395-b64a-e9dbf2259602" time="1372321255262" ignored="false" />
     <file path="/_buttons.scss" changelist="4ecfe818-08ec-4395-b64a-e9dbf2259602" time="1372259656536" ignored="false" />
     <file path="/_customfonts.scss" changelist="4ecfe818-08ec-4395-b64a-e9dbf2259602" time="1372261143826" ignored="false" />
     <file path="/app.scss" changelist="4ecfe818-08ec-4395-b64a-e9dbf2259602" time="1372260218322" ignored="false" />
+    <file path="/BorderLayout.js" changelist="4ecfe818-08ec-4395-b64a-e9dbf2259602" time="1372321169170" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,7 +109,25 @@
       <file leaf-file-name="app.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="22" selection-start="433" selection-end="433" vertical-scroll-proportion="0.0">
+            <state line="78" column="45" selection-start="2011" selection-end="2011" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="db.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/node_modules/mongodb/lib/mongodb/db.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="1644" column="19" selection-start="71103" selection-end="71103" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="utils.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/node_modules/mongodb/lib/mongodb/utils.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="109" column="20" selection-start="2921" selection-end="2921" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -122,19 +142,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Main.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/rsvp/app/view/Main.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="245" column="37" selection-start="5361" selection-end="5361" vertical-scroll-proportion="-2.56">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Main.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/javascripts/Main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="192" column="20" selection-start="5259" selection-end="5259" vertical-scroll-proportion="0.5972222">
+            <state line="218" column="20" selection-start="5940" selection-end="5940" vertical-scroll-proportion="0.31589538">
               <folding />
             </state>
           </provider>
@@ -173,13 +184,6 @@
             <state line="780" column="47" selection-start="58653" selection-end="58653" vertical-scroll-proportion="-9.192307">
               <folding />
             </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Normal_2.png" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/rsvp/resources/images/Normal_2.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
           </provider>
         </entry>
       </file>
@@ -225,12 +229,12 @@
         <option value="$PROJECT_DIR$/public/rsvp/packager.json" />
         <option value="$PROJECT_DIR$/public/rsvp/app.js" />
         <option value="$PROJECT_DIR$/public/rsvp/app.json" />
-        <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/public/rsvp/resources/sass/include/_buttons.scss" />
         <option value="$PROJECT_DIR$/public/rsvp/resources/sass/app.scss" />
         <option value="$PROJECT_DIR$/public/rsvp/resources/css/custom.css" />
         <option value="$PROJECT_DIR$/public/rsvp/resources/sass/include/_customfonts.scss" />
         <option value="$PROJECT_DIR$/public/rsvp/app/view/Main.js" />
+        <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/public/javascripts/Main.js" />
       </list>
     </option>
@@ -963,7 +967,11 @@
       <created>1372262836727</created>
       <updated>1372262836727</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Changed elephants&#10;">
+      <created>1372320540052</created>
+      <updated>1372320540052</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -976,12 +984,12 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3277592" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2497332" sideWeight="0.6718576" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.41694537" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.41694537" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32925472" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32887402" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32887402" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -989,7 +997,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24919957" sideWeight="0.67112595" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24919957" sideWeight="0.5830546" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1061,7 +1069,7 @@
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="23" />
+      <option name="time" value="28" />
     </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
@@ -1069,20 +1077,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/rsvp/app.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="38" selection-start="2322" selection-end="2322" vertical-scroll-proportion="0.036170214">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/rsvp/resources/css/app.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="71" selection-start="259626" selection-end="259626" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/index.jshtml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="6" column="11" selection-start="263" selection-end="263" vertical-scroll-proportion="0.21656051">
@@ -1128,20 +1122,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="22" selection-start="433" selection-end="433" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/touch/resources/css/sencha-touch-rtl.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="20" selection-start="1217" selection-end="1217" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/rsvp/resources/css/custom.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="14" column="10" selection-start="200" selection-end="200" vertical-scroll-proportion="0.0">
@@ -1165,14 +1145,42 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/rsvp/app/view/Main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="245" column="37" selection-start="5361" selection-end="5361" vertical-scroll-proportion="-2.56">
+        <state line="99" column="34" selection-start="2181" selection-end="2181" vertical-scroll-proportion="0.20871143">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/touch/resources/css/sencha-touch-rtl.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="20" selection-start="1217" selection-end="1217" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/mongodb/lib/mongodb/utils.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="109" column="20" selection-start="2921" selection-end="2921" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/mongodb/lib/mongodb/db.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1644" column="19" selection-start="71103" selection-end="71103" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="78" column="45" selection-start="2011" selection-end="2011" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/javascripts/Main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="192" column="20" selection-start="5259" selection-end="5259" vertical-scroll-proportion="0.5972222">
+        <state line="218" column="20" selection-start="5940" selection-end="5940" vertical-scroll-proportion="0.31589538">
           <folding />
         </state>
       </provider>
