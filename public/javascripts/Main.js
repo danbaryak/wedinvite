@@ -171,6 +171,7 @@ Ext.onReady(function () {
             url: 'people',
             reader: {
                 type: 'json',
+                successProperty: 'success',
                 root: 'data'
             },
             writer: {
@@ -179,8 +180,8 @@ Ext.onReady(function () {
         },
         listeners: {
             write: function(store, operation){
-                var record = operation.getRecords()[0];
-                personDetails.loadRecord(record);
+//                var record = operation.getRecords()[0];
+//                personDetails.loadRecord(record);
 //                    name = Ext.String.capitalize(operation.action),
 //                    verb;
 //
@@ -332,7 +333,13 @@ Ext.onReady(function () {
             header: 'מגיעים',
             width: 50,
             dataIndex: 'arriving',
-            editable: false
+            editable: false,
+            renderer: function(value, metaData, record, row, col, store, gridView){
+                if (record.data.replied) {
+                    return value;
+                }
+                return '?';
+            }
         }],
         dockedItems: [{
             xtype: 'toolbar',
@@ -340,8 +347,8 @@ Ext.onReady(function () {
                 text: 'הוספה',
                 handler: function(){
                     // empty record
-                    store.insert(0, new Person());
-                    rowEditing.startEdit(0, 0);
+                    store.add(Ext.create('Person'));
+//                    rowEditing.startEdit(0, 0);
                 }
             }, {
                 itemId: 'delete',
@@ -446,7 +453,7 @@ Ext.onReady(function () {
     var onSelectionChange = function(model, records) {
         var prev = personDetails.getRecord();
         if (prev) {
-            personDetails.updateRecord(prev);
+//            personDetails.updateRecord(prev);
 //            prev.save({
 //                success: function(user) {
 //

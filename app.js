@@ -70,13 +70,15 @@ app.post('/people', function(req, res) {
     console.log('post request with ' + JSON.stringify(req.body));
     var person = req.body;
     people.insert(person, function(err, results) {
-        var result = {};
+
         if (err) {
             throw err;
         }
+        var result = results[0];
+//        result._id = encodeURIComponent(result._id.id);
         res.send({
             success: true,
-            data: results[0]
+            data: results
         });
     });
 
@@ -97,7 +99,7 @@ app.get('/addtestdata', function(req, res) {
 app.put('/people/:id', function(req, res) {
     console.log('put request with ' + JSON.stringify(req.body));
     var person = req.body;
-
+    var pid = person._id;
     person._id = new ObjectID(person._id);
     people.save(person, function(err, results) {
         res.send({
