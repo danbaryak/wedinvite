@@ -151,7 +151,7 @@ var createNotComingItems = function() {
 //            height: '70%',
 //        src: 'http://www.huptalentandbooking.com/images/elephants_dove.png',
             src: 'resources/images/Sad.png',
-            flex: 5
+            flex: 3
         }, {
             xtype: 'panel',
             layout: {
@@ -196,7 +196,7 @@ var createWedInfoItems = function() {
 //            height: '70%',
 //        src: 'http://www.huptalentandbooking.com/images/elephants_dove.png',
         src: 'resources/images/Happy.png',
-        flex: 5
+        flex: 3
     }, {
         defaults: {
             margin: 2
@@ -278,7 +278,7 @@ var createContent = function() {
 //            height: '10%',
 //            html    : '<img src="resources/images/Normal.png" />',
             src: 'resources/images/Normal.png',
-            flex: 5
+            flex: 3
 
         }, {
             xtype: 'panel',

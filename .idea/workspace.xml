@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4ecfe818-08ec-4395-b64a-e9dbf2259602" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MailSender.js" afterPath="$PROJECT_DIR$/MailSender.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/rsvp/app/view/Main.js" afterPath="$PROJECT_DIR$/public/rsvp/app/view/Main.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -29,7 +28,7 @@
     <file path="$PROJECT_DIR$/../Elastica/elastica-sandbox/src/main/webapp/WEB-INF/spring-context.xml" changelist="4ecfe818-08ec-4395-b64a-e9dbf2259602" time="1372069900183" ignored="false" />
     <file path="$PROJECT_DIR$/../Elastica/elastica-sandbox/src/main/webapp/WEB-INF/pages/index4.jsp" changelist="4ecfe818-08ec-4395-b64a-e9dbf2259602" time="1372069972348" ignored="false" />
     <file path="$PROJECT_DIR$/../Elastica/elastica-client-core/src/main/js/extjs/compatibility/Ext4PreConfig.js" changelist="4ecfe818-08ec-4395-b64a-e9dbf2259602" time="1372070004999" ignored="false" />
-    <file path="/Dummy.txt" changelist="4ecfe818-08ec-4395-b64a-e9dbf2259602" time="1372329404194" ignored="false" />
+    <file path="/Dummy.txt" changelist="4ecfe818-08ec-4395-b64a-e9dbf2259602" time="1372330819739" ignored="false" />
     <file path="/sencha.cfg" changelist="4ecfe818-08ec-4395-b64a-e9dbf2259602" time="1372087347813" ignored="false" />
     <file path="/packager.json" changelist="4ecfe818-08ec-4395-b64a-e9dbf2259602" time="1372087491194" ignored="false" />
     <file path="$PROJECT_DIR$/../dumpster/.idea/workspace.xml" changelist="4ecfe818-08ec-4395-b64a-e9dbf2259602" time="1372177234204" ignored="false" />
@@ -133,10 +132,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Main.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Main.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/rsvp/app/view/Main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="217" column="27" selection-start="4730" selection-end="4730" vertical-scroll-proportion="-4.92">
+            <state line="151" column="17" selection-start="3267" selection-end="3267" vertical-scroll-proportion="0.2605932">
               <folding />
             </state>
           </provider>
@@ -160,10 +159,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MailSender.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="MailSender.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MailSender.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="30" column="18" selection-start="709" selection-end="709" vertical-scroll-proportion="0.21900827">
+            <state line="14" column="11" selection-start="283" selection-end="283" vertical-scroll-proportion="0.0">
               <folding>
                 <marker date="1372330757042" expanded="true" signature="1492:1524" placeholder="..." />
               </folding>
@@ -209,8 +208,8 @@
         <option value="$PROJECT_DIR$/public/rsvp/resources/sass/include/_customfonts.scss" />
         <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/public/javascripts/Main.js" />
-        <option value="$PROJECT_DIR$/public/rsvp/app/view/Main.js" />
         <option value="$PROJECT_DIR$/MailSender.js" />
+        <option value="$PROJECT_DIR$/public/rsvp/app/view/Main.js" />
       </list>
     </option>
   </component>
@@ -544,6 +543,54 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="weddinvite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="weddinvite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rsvp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="weddinvite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="weddinvite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rsvp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -954,7 +1001,11 @@
       <created>1372329409465</created>
       <updated>1372329409465</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="fixed link to alenby farm">
+      <created>1372330824532</created>
+      <updated>1372330824532</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1152,13 +1203,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/rsvp/app/view/Main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="217" column="27" selection-start="4730" selection-end="4730" vertical-scroll-proportion="-4.92">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/javascripts/Main.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="218" column="20" selection-start="5940" selection-end="5940" vertical-scroll-proportion="0.0">
@@ -1182,10 +1226,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/MailSender.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="18" selection-start="709" selection-end="709" vertical-scroll-proportion="0.21900827">
+        <state line="14" column="11" selection-start="283" selection-end="283" vertical-scroll-proportion="0.0">
           <folding>
             <marker date="1372330757042" expanded="true" signature="1492:1524" placeholder="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/rsvp/app/view/Main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="151" column="17" selection-start="3267" selection-end="3267" vertical-scroll-proportion="0.2605932">
+          <folding />
         </state>
       </provider>
     </entry>
