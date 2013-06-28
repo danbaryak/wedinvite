@@ -164,13 +164,24 @@ app.get('/stats', function(req, res) {
         if (this.toCount) {
             invited -= this.toCount;
         }
-        emit('invited', {sum: invited});
+        var arriving = 0;
+        if (this.replied && this.arriving) {
+            arriving = eval(this.arriving);
+            if (this.toCount) {
+                arriving -= this.toCount;
+            }
+        }
+        emit('invited', {sum: invited, arr: arriving});
     }
     reduce = function(key, values) {
-        var reduced = { sum: 0 };
-        values.forEach(function(value) { reduced.sum += value.sum; });
+        var reduced = { sum: 0, arr: 0 };
+        values.forEach(function(value) {
+            reduced.sum += value.sum;
+            reduced.arr += value.arr;
+        });
         return reduced;
     }
+
     people.mapReduce(map, reduce, {out: {inline: 1}}, function(err, results, stats) {
         if (err) {
             throw err;

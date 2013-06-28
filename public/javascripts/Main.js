@@ -88,9 +88,30 @@ Ext.onReady(function () {
         ]
     });
 
+    var lblTotal = Ext.create('Ext.form.Label');
+    var lblArr = Ext.create('Ext.form.Label');
+    var statsPanel = Ext.create('Ext.Panel', {
+        region: 'south',
+        layout: {
+            type: 'hbox'
+        },
+        defaults: {
+            margins: 5
+        },
+        items: [
+            {
+                xtype: 'label',
+                html: 'סה"כ מוזמנים:'
+            }, lblTotal, {
+                xtype: 'label',
+                html: 'אישרו:'
+            }, lblArr
+        ]
+    });
+
     MyCheckColumn = Ext.extend(Ext.grid.column.CheckColumn,{
         //The reference to the related dataIndex
-        relatedIndex : null,
+        relatedIndex : null
 //        listeners: {
 //        //Override onMouseDown method
 //            beforecheckchange: function( column, rowIndex, checked, eOpts ) {
@@ -99,6 +120,21 @@ Ext.onReady(function () {
 //            }
 //        }
     });
+
+    var updateStats = function() {
+        Ext.Ajax.request({
+            url: 'stats',
+            success: function(response) {
+                try {
+                    var stats = eval(response.responseText)[0].value;
+                    lblTotal.setText(stats.sum);
+                    lblArr.setText(stats.arr);
+                } catch (exc) {
+                    console.log(exc);
+                }
+            }
+        })
+    }
 
     var form = Ext.create('Ext.form.Panel', {
         width: 500,
@@ -200,6 +236,7 @@ Ext.onReady(function () {
 
             },
             load: function(store, records) {
+                updateStats();
 //                store.each(function(record) {
 //                    if (record.get('sendFrom') == "") {
 //                        record.set('sendFrom', 'Assaf');
@@ -209,6 +246,9 @@ Ext.onReady(function () {
 //                Ext.each(records, function(rec) {
 //                    rec.set('sendFrom', 'Assaf');
 //                })
+            },
+            write: function() {
+                updateStats();
             }
         }
     });
@@ -229,15 +269,15 @@ Ext.onReady(function () {
     });
 
     cellEditing = new Ext.grid.plugin.CellEditing({
-        clicksToEdit: 2,
-        listeners: {
-            beforeEdit: function(object, options){
-                if (object.context.record.data.invitationsSent > 0) {
-                    return false;
-                }
-                return true;
-            }
-        }
+        clicksToEdit: 2
+//        listeners: {
+//            beforeEdit: function(object, options){
+//                if (object.context.record.data.invitationsSent > 0) {
+//                    return false;
+//                }
+//                return true;
+//            }
+//        }
 
     });
 
@@ -523,7 +563,7 @@ Ext.onReady(function () {
                 ]
 
             },
-            grid
+            grid, statsPanel
         ]
     });
 
