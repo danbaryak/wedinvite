@@ -100,8 +100,10 @@ app.put('/people/:id', function(req, res) {
     console.log('put request with ' + JSON.stringify(req.body));
     var person = req.body;
     var pid = person._id;
-    person._id = new ObjectID(person._id);
-    people.save(person, function(err, results) {
+    var pid = id = new ObjectID(person._id);
+    delete person._id;
+
+    people.update({_id: pid}, {$set: person}, function(err, results) {
         res.send({
             success: true,
             data: person
@@ -110,7 +112,7 @@ app.put('/people/:id', function(req, res) {
 })
 
 app.delete('/people/:id', function(req, res) {
-    people.remove({_id: new ObjectID(req.params.id)}, function(err,doc){
+    people.remove({_id: new ObjectID(req.params.id)}, function(err, doc){
         if(err) {
             res.send(err);
             return;

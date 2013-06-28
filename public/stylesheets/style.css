@@ -11,3 +11,12 @@ a {
     background: #ff94a6;
     color: white;
 }
+
+.disabledRow {
+    background: #808080;
+    /*font-weight: bold;*/
+}
+
+.normalRow {
+    background: white;
+}

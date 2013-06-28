@@ -52,6 +52,9 @@ Ext.onReady(function () {
             }, {
                 name: 'replied',
                 type: 'boolean'
+            }, {
+                name: 'needsRide',
+                type: 'boolean'
             }]
     });
 
@@ -88,13 +91,13 @@ Ext.onReady(function () {
     MyCheckColumn = Ext.extend(Ext.grid.column.CheckColumn,{
         //The reference to the related dataIndex
         relatedIndex : null,
-        listeners: {
-        //Override onMouseDown method
-            beforecheckchange: function( column, rowIndex, checked, eOpts ) {
-                var person = store.getAt(rowIndex).data;
-                return person.invitationsSent == 0;
-            }
-        }
+//        listeners: {
+//        //Override onMouseDown method
+//            beforecheckchange: function( column, rowIndex, checked, eOpts ) {
+//                var person = store.getAt(rowIndex).data;
+//                return person.invitationsSent == 0;
+//            }
+//        }
     });
 
     var form = Ext.create('Ext.form.Panel', {
@@ -175,7 +178,8 @@ Ext.onReady(function () {
                 root: 'data'
             },
             writer: {
-                type: 'json'
+                type: 'json',
+                writeAllFields: false
             }
         },
         listeners: {
@@ -239,7 +243,22 @@ Ext.onReady(function () {
 
     var grid = Ext.create('Ext.grid.Panel', {
         region: 'center',
-
+//        viewConfig: {
+//            getRowClass: function(record, rowIndex, rowParams, store){
+//                return record.get("invitationsSent") > 0 ? "normalRow" : "disabledRow";
+//            }
+//        },
+//        viewConfig: {
+//            //Return CSS class to apply to rows depending upon data values
+//            getRowClass: function(record, index) {
+//                if (record.data.invitationsSent > 0) {
+//
+//                    return 'disabledRow';
+//                } else if (c > 0) {
+//                    return 'normalRow';
+//                }
+//            }
+//        },
         rtl: true,
         plugins: [cellEditing],
         width: 400,
@@ -289,6 +308,16 @@ Ext.onReady(function () {
                 allowBlank: true
             }
         },{
+            header: 'הסעה',
+            width: 80,
+            sortable: true,
+            dataIndex: 'needsRide',
+            xtype: 'checkcolumn',
+            editor: {
+                xtype: 'checkbox',
+                cls: 'x-grid-checkheader-editor'
+            }
+        },{
             header: 'שלח מ',
             width: 80,
             sortable: true,
@@ -296,17 +325,17 @@ Ext.onReady(function () {
             editable: true,
             editor: combo
 
-        },new MyCheckColumn({
+        },{
             header: 'הזמנה זוגית',
             width: 80,
             sortable: true,
             dataIndex: 'couple',
-            xtype: 'disablecheckcolumn',
+            xtype: 'checkcolumn',
             editor: {
                 xtype: 'checkbox',
                 cls: 'x-grid-checkheader-editor'
             }
-        }),
+        },
 
        {
             header: 'שם הזוג',
