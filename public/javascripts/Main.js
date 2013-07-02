@@ -242,7 +242,23 @@ Ext.onReady(function () {
     });
 
     groupingFeature = Ext.create('Ext.grid.feature.Grouping', {
-        groupHeaderTpl: 'שולחן {name}'
+        groupHeaderTpl: [
+           '<div>{name} ({children:this.formatName})</div>',
+            {
+                formatName: function(children) {
+                    var count = 0;
+                    Ext.each(children, function(child) {
+                        var person = child.data;
+                        var arriving = person.couple ? 2 : 1;
+                        arriving -= person.toCount;
+                        count += arriving;
+                    });
+//                    var count = this.values.length;
+                    return count;
+                }
+            }
+        ]
+//        groupHeaderTpl: 'שולחן {name}'
     });
 
     var selModel = Ext.create('Ext.selection.CheckboxModel', {
