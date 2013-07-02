@@ -252,8 +252,11 @@ Ext.onReady(function () {
                     var count = 0;
                     Ext.each(children, function(child) {
                         var person = child.data;
-                        var arriving = person.couple ? 2 : 1;
+                        var arriving = person.arriving;
                         arriving -= person.toCount;
+                        if (arriving < 0) {
+                            arriving = 0;
+                        }
                         count += arriving;
                     });
 //                    var count = this.values.length;
