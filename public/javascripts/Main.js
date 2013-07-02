@@ -92,6 +92,7 @@ Ext.onReady(function () {
 
     var lblTotal = Ext.create('Ext.form.Label');
     var lblArr = Ext.create('Ext.form.Label');
+    var lblRide = Ext.create('Ext.form.Label');
     var statsPanel = Ext.create('Ext.Panel', {
         region: 'south',
         layout: {
@@ -107,7 +108,8 @@ Ext.onReady(function () {
             }, lblTotal, {
                 xtype: 'label',
                 html: 'אישרו:'
-            }, lblArr
+            }, lblArr ,
+            { xtype: 'label', html: ', צריכים הסעה:'}, lblRide
         ]
     });
 
@@ -131,6 +133,7 @@ Ext.onReady(function () {
                     var stats = eval(response.responseText)[0].value;
                     lblTotal.setText(stats.sum);
                     lblArr.setText(stats.arr);
+                    lblRide.setText(stats.ride);
                 } catch (exc) {
                     console.log(exc);
                 }
