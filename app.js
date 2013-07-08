@@ -59,10 +59,38 @@ app.get('/sendmail', function(req, res) {
     var sendTo = req.query.sendTo;
     getPerson(personId, function(person) {
         console.log(JSON.stringify(person));
-        mailer.sendMail(person, sendTo);
+        mailer.sendMail(person,
+            sendTo,
+            'הזמנה לחתונה של אסף ודן' ,
+            "<body style='text-align:right; direction:rtl;'><b><a href='http://54.225.118.154:8080/rsvp?id="+ person._id + "'ג<>לחצו כאן כדי לצפות בהזמנה (אפשר גם מהסמארטפון)</a></body>"
+        );
         res.send('Ok');
     });
 });
+
+app.get('/sendridemail', function(req, res) {
+    var personId = req.query.id;
+    getPerson(personId, function(person) {
+        var message = "<body style='text-align:right'>" +
+            "הי " + person.name + "<br>" +
+            "אנחנו מארגנים הסעה לחתונה שתצא מתחנת רכבת ארלוזורוב (ליד מסוף אל-על) בשעה 19:30. האוטובוס יצא בחזרה מחוות אלנבי בסביבות השעה אחת בלילה" + "<br>";
+
+        if (person.couple) {
+            message += "<a href='http://54.225.118.154:8080/ride?id=" + person._id + "&count=2'>" + "שנינו נשמח להצטרף להסעה" + "<br>";
+        } else {
+            message += "<a href='http://54.225.118.154:8080/ride?id=" + person._id + "&count=1'>" + "אני אשמח להצטרף להסעה" + "<br>";
+        }
+        message += "<a href='http://54.225.118.154:8080/ride?id=" + person._id + "&count=0'>" + "לא תודה"  + "<br>";
+
+        mailer.sendMail(
+            person,
+            person.email,
+            'הסעה לחתונה של דן ואסף',
+            message
+        );
+    });
+});
+
 
 app.get('/people', function(req, res) {
     people.find(function(err, p) {
@@ -87,18 +115,6 @@ app.post('/people', function(req, res) {
     });
 
 });
-
-app.get('/addtestdata', function(req, res) {
-    people.insert([{
-        name: 'Ran Meyerstein',
-        email: 'ranm@gmail.com'
-    },{
-        name: 'Shahar Biron',
-        email: 'shaharb@gmail.com'
-    }], function(err, people) {
-        res.send('OK');
-    });
-})
 
 app.put('/people/:id', function(req, res) {
     console.log('put request with ' + JSON.stringify(req.body));
@@ -139,6 +155,21 @@ app.get('/rsvp', function(req, res) {
             });
 
             res.render('rsvp/rsvp');
+        }
+    });
+});
+app.get('/ride', function(req, res) {
+    var personId = req.query.id;
+    var count = req.query.count;
+    people.update( { _id: new ObjectID(personId)}, { $set: { ride: count }}, function(err, doc) {
+        if (err) {
+            res.send('אופס, קרתה תקלה');
+        } else {
+            if (count > 0) {
+                res.send("<html><body style='text-align:right;'>" + "נרשמת בהצלחה להסעה" + "</body></html>")
+            } else {
+                res.send("<html><body style='text-align:right;'>" + "תודה!" + "</body></html>")
+            }
         }
     });
 });
@@ -196,7 +227,7 @@ app.get('/stats', function(req, res) {
         if (this.toCount) {
             invited -= this.toCount;
         }
-        var needsRide = this.needsRide ? invited : 0;
+        var needsRide = eval(this.ride) || 0;
         var arriving = 0;
         if (this.replied && this.arriving) {
             arriving = eval(this.arriving);

@@ -18,7 +18,7 @@ MailSender = {
      *
      * @param toAddress
      */
-    sendMail: function (person, sendTo) {
+    sendMail: function (person, sendTo, subject, message) {
         var toAddress = sendTo;
 //        var toAddress = 'assaf.is.on.fire@gmail.com';
 
@@ -40,13 +40,9 @@ MailSender = {
         var mailOptions = {
             from: "Dan Bar-Yaakov", // sender address
             to: toAddress, // list of receivers
-            subject: "הזמנה לחתונה של אסף ודן", // Subject line
+            subject: subject, // Subject line
             text: "", // plaintext body
-//            html: "הי "  + person.name + "<br><img src='http://www.huptalentandbooking.com/images/elephants_dove.png'>" +
-//                "<br>אנחנו מתחתנים וזה<br><a href='http://mbp.local:3000/reply?id="
-//                + person._id + "&num=1'>אני מגיע לבד</a><br>"
-            html:  "<body style='text-align:right; direction:rtl;'><b><a href='http://54.225.118.154:8080/rsvp?id="+ person._id + "'ג<>לחצו כאן כדי לצפות בהזמנה (אפשר גם מהסמארטפון)</a></body>"
-
+            html: message
         }
 
 // send mail with defined transport object

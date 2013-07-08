@@ -6,7 +6,8 @@ Ext.onReady(function () {
         fields: ['value'],
         data: [
             { value: 'Dan' },
-            { value: 'Assaf' }
+            { value: 'Assaf' },
+            { value: 'Dan Work' }
         ],
         proxy: {
             type: 'memory',
@@ -57,6 +58,8 @@ Ext.onReady(function () {
                 type: 'boolean'
             }, {
                 name: 'table'
+            }, {
+                name: 'ride'
             }]
     });
 
@@ -384,12 +387,8 @@ Ext.onReady(function () {
             header: 'הסעה',
             width: 80,
             sortable: true,
-            dataIndex: 'needsRide',
-            xtype: 'checkcolumn',
-            editor: {
-                xtype: 'checkbox',
-                cls: 'x-grid-checkheader-editor'
-            }
+            dataIndex: 'ride',
+            editable: false
         },{
             header: 'שלח מ',
             width: 80,
@@ -581,6 +580,31 @@ Ext.onReady(function () {
                     });
 
                 }
+
+            }, {
+                xtype: 'button',
+                text: 'הזמן להסעה',
+                cls: 'btnRed',
+                handler: function() {
+                    Ext.MessageBox.confirm('שליחת הזמנה להסעה', 'לשלוח  בטוח??', function(btn){
+                        if(btn === 'yes'){
+                            Ext.each(grid.getSelectionModel().getSelection(), function(record) {
+                                record.set('invitationsSent', record.get('invitationsSent') + 1);
+//                                record.save();
+                                Ext.Ajax.request({
+                                    method: 'GET',
+                                    url: 'sendridemail',
+                                    params: {
+                                        id: record.data._id,
+                                        sendTo: record.data.email
+                                    }
+                                });
+                            });
+                        }
+                    });
+
+                }
+
             }]
         }]
 
