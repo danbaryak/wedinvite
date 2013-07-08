@@ -10,7 +10,7 @@ var express = require('express')
     , http = require('http')
     , path = require('path');
 
-var json2csv = require('json2csv');
+var json2csv = require('nice-json2csv');
 
 var fs = require('fs');
 var ObjectID = require('mongodb').ObjectID;
@@ -212,12 +212,7 @@ app.get('/download', function(req, res){
 
 app.get('/invitelist', function(req, res) {
     people.find().sort({lastname: 1}, function(err, docs) {
-        json2csv({data: docs, fields: ['lastname', 'name', 'table']}, function(err, csv) {
-           if (err) {
-               console.log(err);
-           }
-           res.send(csv);
-        });
+        res.csv(docs, 'invites.csv', ['lastname', 'name', 'table']);
     });
 });
 
