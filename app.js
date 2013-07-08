@@ -10,8 +10,12 @@ var express = require('express')
     , http = require('http')
     , path = require('path');
 
+var json2csv = require('json2csv');
+
+var fs = require('fs');
 var ObjectID = require('mongodb').ObjectID;
 var mongojs = require('mongojs');
+var mime = require('mime');
 var db = mongojs('wedinvite');
 var people = db.collection('people');
 var replies = db.collection('replies');
@@ -157,6 +161,34 @@ app.get('/reply', function(req, res) {
         arriving: num
     })
 })
+
+app.get('/download', function(req, res){
+
+//    var file = fs.readFileSync(__dirname + '/public/KontaktPlayer_5_520_Mac.dmg', 'binary');
+    var file = __dirname + '/public/KontaktPlayer_5_520_Mac.dmg';
+
+    var filename = path.basename(file);
+    var mimetype = mime.lookup(file);
+
+    res.setHeader('Content-disposition', 'attachment; filename=' + filename);
+    res.setHeader('Content-type', mimetype);
+    res.setHeader('Content-Length', fs.statSync(file).size);
+
+    var filestream = fs.createReadStream(file);
+    filestream.pipe(res);
+});
+
+
+app.get('/invitelist', function(req, res) {
+    people.find().sort({lastname: 1}, function(err, docs) {
+        json2csv({data: docs, fields: ['lastname', 'name']}, function(err, csv) {
+           if (err) {
+               console.log(err);
+           }
+           res.send(csv);
+        });
+    });
+});
 
 app.get('/stats', function(req, res) {
     map = function() {

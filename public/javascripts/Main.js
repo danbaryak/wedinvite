@@ -475,7 +475,7 @@ Ext.onReady(function () {
                 }
             },{
                 xtype: 'button',
-                text: 'שלח הזמנה לבדיקה ל assaf.is.on.fire@gmail.com',
+                text: 'שלח לאסף',
                 handler: function() {
                     var selections = grid.getSelectionModel().getSelection();
                     if (selections.length > 0) {
@@ -493,7 +493,7 @@ Ext.onReady(function () {
                 }
             },{
                 xtype: 'button',
-                text: 'שלח הזמנה לבדיקה ל danbaryak@gmail.com',
+                text: 'שלח לדן',
                 handler: function() {
                     var selections = grid.getSelectionModel().getSelection();
                     if (selections.length > 0) {
@@ -524,7 +524,41 @@ Ext.onReady(function () {
                     });
 
                 }
-            }, '-',{
+            }, {
+                xtype: 'button',
+                text: 'יצא רשימת שולחנות',
+                handler: function() {
+                    Ext.create('Ext.window.Window', {
+                        title: 'יצוא רשימת חלוקה לשולחנות',
+                        height: 200,
+                        width: 400,
+                        modal: 'true',
+                        layout: 'fit',
+                        items: [
+                            {
+                                xtype: 'form',
+                                items: [
+                                    {
+                                        boxLabelAlign: 'before',
+//                                        rtl: false,
+                                        xtype: 'checkboxfield',
+                                        name: 'title',
+                                        fieldLabel: 'כותרת'
+                                    }
+                                ],
+                                buttons: [
+                                    {
+                                        text: 'יצא',
+                                        handler: function() {
+                                            downloadURL('/rsvp/resources/images/main.jpg')
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }).show();
+                }
+            }, '->',{
                 xtype: 'button',
                 text: 'שלח הזמנות',
                 cls: 'btnRed',
@@ -640,4 +674,23 @@ var msg = function (title, msg) {
         icon: Ext.Msg.INFO,
         buttons: Ext.Msg.OK
     });
+};
+
+var downloadURL = function downloadURL(url) {
+    var body = Ext.getBody();
+    var frame = body.createChild({
+        tag:'iframe'
+        ,cls:'x-hidden'
+        ,id:'iframe'
+        ,name:'iframe'
+    });
+
+    var form = body.createChild({
+        tag:'form'
+        ,cls:'x-hidden'
+        ,id:'form'
+        ,action:'/download'
+        ,target:'iframe'
+    });
+    form.dom.submit();
 };
