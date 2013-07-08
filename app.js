@@ -181,7 +181,7 @@ app.get('/download', function(req, res){
 
 app.get('/invitelist', function(req, res) {
     people.find().sort({lastname: 1}, function(err, docs) {
-        json2csv({data: docs, fields: ['lastname', 'name']}, function(err, csv) {
+        json2csv({data: docs, fields: ['lastname', 'name', 'table']}, function(err, csv) {
            if (err) {
                console.log(err);
            }
