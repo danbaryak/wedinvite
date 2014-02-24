@@ -549,7 +549,7 @@ Ext.onReady(function () {
                                     {
                                         text: 'יצא',
                                         handler: function() {
-                                            downloadURL('/rsvp/resources/images/main.jpg')
+                                            downloadURL('/invitelist')
                                         }
                                     }
                                 ]
@@ -713,7 +713,7 @@ var downloadURL = function downloadURL(url) {
         tag:'form'
         ,cls:'x-hidden'
         ,id:'form'
-        ,action:'/download'
+        ,action:'/invitelist'
         ,target:'iframe'
     });
     form.dom.submit();
